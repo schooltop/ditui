@@ -1,0 +1,17 @@
+<div class="ui vertical fluid menu" id="verticalMenu">
+  <ul>
+    <li>
+      <a class="item">
+        <i class="bar chart icon"></i>
+        <span class="main_menu">用户管理</span>
+        <i class="right dropdown icon"></i>
+      </a>
+      <div class="menu content child active">
+        <%= link_to admin_employees_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>员工管理</span>
+        <% end %>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -7,9 +7,9 @@ default: &default
 
 development:
   <<: *default
-  database: mba_education
+  database: ditui
 
 # 配置报表数据源
 from:
   <<: *default
-  database: mba_education
+  database: ditui

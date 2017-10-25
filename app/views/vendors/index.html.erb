@@ -1,0 +1,26 @@
+<!-- content srart -->
+<div class="am-g am-g-fixed vendor-fixed">
+
+    <div class="am-u-md-8 am-u-sm-12">
+
+      <% @vendors.each do |vendor| %>
+        <article class="am-g blog-entry-article">
+            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+                <%= image_tag vendor.cover_img_path ,:class=>"am-u-sm-12" %>
+            </div>
+            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
+                <span><a href="/vendors/<%= vendor.id %>" class="vendor-color">article &nbsp;</a></span>
+                <span> <%= vendor.title %> &nbsp;</span>
+                <span><%= show_db_time(vendor.created_at) %></span>
+                <h1><a href="/vendors/<%= vendor.id %>"><%= vendor.title %></a></h1>
+                <p><%= vendor.content.html_safe %></p>
+                <p><a href="/vendors/<%= vendor.id %>" class="vendor-continue">continue reading</a></p>
+            </div>
+        </article>
+      <% end %>
+    </div>
+    
+</div>
+<!-- content end -->
+
+

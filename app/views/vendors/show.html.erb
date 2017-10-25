@@ -1,0 +1,87 @@
+<!-- content srart -->
+<%# if @blog.mpt.present? %>
+    <audio autoplay="autoplay" controls="controls"loop="loop" preload="auto"
+                src="<%= @blog.mpt %>">
+          你的浏览器不支持audio标签
+    </audio>
+<%# end %>
+
+<div class="am-g am-g-fixed blog-fixed blog-content">
+    <div class="am-u-md-8 am-u-sm-12">
+      <article class="am-article blog-article-p">
+        <div class="am-article-hd">
+          <h1 class="am-article-title blog-text-center"><%= @blog.title %></h1>
+          <p class="am-article-meta blog-text-center">
+              <span><a href="#" class="blog-color">article &nbsp;</a></span>-
+              <span><a href="#">@<%= @blog.user_name %> &nbsp;</a></span>-
+              <span><a href="#"><%= show_db_time(@blog.created_at) %></a></span>
+          </p>
+        </div>        
+        <div class="am-article-bd">
+            <%= image_tag @blog.cover_img_path ,:class=>"blog-entry-img blog-article-margin" %>   
+            <br/><br/>
+            <%= @blog.content.html_safe %>
+        </div>
+      </article>
+        
+        <div class="am-g blog-article-widget blog-article-margin">
+          <div class="am-u-lg-4 am-u-md-5 am-u-sm-7 am-u-sm-centered blog-text-center">
+            <span class="am-icon-tags"> &nbsp;</span><a href="#">标签</a> , <a href="#">TAG</a> , <a href="#">啦啦</a>
+            <hr>
+            <a href="tencent://message/?Menu=yes&uin=107422244"><span class="am-icon-qq am-icon-fw am-primary blog-icon"></span></a>
+            <a href=""><span class="am-icon-wechat am-icon-fw blog-icon"></span></a>
+            <a href=""><span class="am-icon-weibo am-icon-fw blog-icon"></span></a>
+          </div>
+        </div>
+
+        <hr>
+        <div class="am-g blog-author blog-article-margin">
+          <div class="am-u-sm-3 am-u-md-3 am-u-lg-2">
+            <%= image_tag "/assets/logo_a.png" ,:class=>"blog-author-img am-circle"%>
+          </div>
+          <div class="am-u-sm-9 am-u-md-9 am-u-lg-10">
+          <h3><span>作者 &nbsp;: &nbsp;</span><span class="blog-color">jamst</span></h3>
+            <p>没文化真可怕。</p>
+          </div>
+        </div>
+        
+        <hr>
+
+        <%= simple_form_for Comment.new, url: add_comments_blogs_path, method: :get, html: {id:"add_comment_form",class:"am-form am-g"} do |f| %>
+            <h3 class="blog-comment">评论</h3>
+          <fieldset>
+            <div class="am-form-group">
+              <input type="hidden" name="blog_id" value=<%= @blog.id %>>
+              <textarea class="" rows="5" placeholder="一字千金" name="comment_text" id="comment_text"></textarea>
+            </div>
+            <p><button type="button" class="am-btn am-btn-default" id="add_comments_submit">发表评论</button></p>
+          </fieldset>
+        <% end %>
+
+        <hr>
+      
+        <div class="blog-sidebar-widget blog-bor" id="blog_comments_list" >
+            <%= render 'add_comments' %>
+        </div>
+
+    </div>
+
+    <%= render '/shared/blog/right' %>
+    
+</div>
+<!-- content end -->
+
+<script type="text/javascript">
+  $("#add_comments_submit").click(function(){
+    var comment_text = $("#comment_text").val()
+    $.ajax({
+          url: '/blogs/add_comments',
+          data: {id:<%= @blog.id%>,comment_text:comment_text},
+          type: "get",
+          success: function(data){
+            $("#comment_text").val("");
+            $('#blog_comments_list').html(data);
+          }
+        });
+  });
+</script>

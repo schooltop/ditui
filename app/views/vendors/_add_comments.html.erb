@@ -1,0 +1,6 @@
+<h2 class="blog-title"><span>评论记录</span></h2>
+<ul class="am-list">
+  <% @blog.comments&.order(id:"desc").each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+</ul>

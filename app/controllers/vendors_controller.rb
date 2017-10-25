@@ -1,21 +1,15 @@
-class vendorsController < ApplicationController
+class VendorsController < ApplicationController
   before_action :set_vendor, only: [:show, :edit, :update, :destroy,:add_comments]
   layout "vendor"
 
   # GET /vendors
   # GET /vendors.json
   def index
-    if params[:title]
-      @vendors = vendor.where("title like ? ","%#{params[:title]}%").page(params[:page]).per(10)
-    elsif params[:category_id]
-      @vendors = vendor.where(category_id:params[:category_id]).page(params[:page]).per(10)
-    else
-      @vendors = vendor.all.page(params[:page]).per(10)
-    end
+    @vendors = Vendor.all
   end
 
   def top_search
-    @vendors = vendor.where("title like '#{params[:title]}%' ").page(params[:page]).per(9)
+    @vendors = Vendor.where("title like '#{params[:title]}%' ").page(params[:page]).per(9)
     render "index"
   end
 
@@ -32,7 +26,7 @@ class vendorsController < ApplicationController
 
   # GET /vendors/new
   def new
-    @vendor = vendor.new
+    @vendor = Vendor.new
   end
 
   # GET /vendors/1/edit
@@ -42,7 +36,7 @@ class vendorsController < ApplicationController
   # POST /vendors
   # POST /vendors.json
   def create
-    @vendor = vendor.new(vendor_params)
+    @vendor = Vendor.new(vendor_params)
     respond_to do |format|
       if @vendor.save
         unless params[:draft_img].blank?
@@ -96,7 +90,7 @@ class vendorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vendor
-      @vendor = vendor.find(params[:id])
+      @vendor = Vendor.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

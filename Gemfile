@@ -29,6 +29,7 @@ gem 'default_where', github: 'qinmingyuan/default_where'
 
 gem 'spreadsheet'
 gem 'roo'
+gem 'exifr'
 
 # Login & Authority
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'

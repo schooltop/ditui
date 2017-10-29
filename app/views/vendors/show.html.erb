@@ -4,15 +4,16 @@
     <div class="am-u-md-8 am-u-sm-12">
       <article class="am-article blog-article-p">
         <div class="am-article-hd">
-          <h1 class="am-article-title blog-text-center"><%= @vendor.title %></h1>
+          <h1 class="am-article-title blog-text-center"><%= @vendor.name %></h1>
           <p class="am-article-meta blog-text-center">
-              <span><a href="#" class="blog-color">article &nbsp;</a></span>-
-              <span><a href="#">@<%= @vendor.user_name %> &nbsp;</a></span>-
+              <span><a href="#" class="blog-color"><%= @vendor.title %> &nbsp;</a></span>-
               <span><a href="#"><%= show_db_time(@vendor.created_at) %></a></span>
           </p>
         </div>        
         <div class="am-article-bd">
-            <%= image_tag @vendor.cover_img_path ,:class=>"blog-entry-img blog-article-margin" %>   
+            <a href="/vendors/show_gps?id=<%=@vendor.cover_img.to_i%>" target="_blank">
+            <%= image_tag @vendor.cover_img_path ,:class=>"blog-entry-img blog-article-margin",:width=>"600px",:higth=>"400px" %>   
+            </a>
             <br/><br/>
             <%= @vendor.content.html_safe %>
         </div>
@@ -67,7 +68,7 @@
   $("#add_comments_submit").click(function(){
     var comment_text = $("#comment_text").val()
     $.ajax({
-          url: '/blogs/add_comments',
+          url: '/vendors/add_comments',
           data: {id:<%= @vendor.id%>,comment_text:comment_text},
           type: "get",
           success: function(data){

@@ -1,26 +1,20 @@
 <!-- content srart -->
-<%# if @blog.mpt.present? %>
-    <audio autoplay="autoplay" controls="controls"loop="loop" preload="auto"
-                src="<%= @blog.mpt %>">
-          你的浏览器不支持audio标签
-    </audio>
-<%# end %>
 
 <div class="am-g am-g-fixed blog-fixed blog-content">
     <div class="am-u-md-8 am-u-sm-12">
       <article class="am-article blog-article-p">
         <div class="am-article-hd">
-          <h1 class="am-article-title blog-text-center"><%= @blog.title %></h1>
+          <h1 class="am-article-title blog-text-center"><%= @vendor.title %></h1>
           <p class="am-article-meta blog-text-center">
               <span><a href="#" class="blog-color">article &nbsp;</a></span>-
-              <span><a href="#">@<%= @blog.user_name %> &nbsp;</a></span>-
-              <span><a href="#"><%= show_db_time(@blog.created_at) %></a></span>
+              <span><a href="#">@<%= @vendor.user_name %> &nbsp;</a></span>-
+              <span><a href="#"><%= show_db_time(@vendor.created_at) %></a></span>
           </p>
         </div>        
         <div class="am-article-bd">
-            <%= image_tag @blog.cover_img_path ,:class=>"blog-entry-img blog-article-margin" %>   
+            <%= image_tag @vendor.cover_img_path ,:class=>"blog-entry-img blog-article-margin" %>   
             <br/><br/>
-            <%= @blog.content.html_safe %>
+            <%= @vendor.content.html_safe %>
         </div>
       </article>
         
@@ -47,11 +41,11 @@
         
         <hr>
 
-        <%= simple_form_for Comment.new, url: add_comments_blogs_path, method: :get, html: {id:"add_comment_form",class:"am-form am-g"} do |f| %>
+        <%= simple_form_for Comment.new, url: add_comments_vendors_path, method: :get, html: {id:"add_comment_form",class:"am-form am-g"} do |f| %>
             <h3 class="blog-comment">评论</h3>
           <fieldset>
             <div class="am-form-group">
-              <input type="hidden" name="blog_id" value=<%= @blog.id %>>
+              <input type="hidden" name="blog_id" value=<%= @vendor.id %>>
               <textarea class="" rows="5" placeholder="一字千金" name="comment_text" id="comment_text"></textarea>
             </div>
             <p><button type="button" class="am-btn am-btn-default" id="add_comments_submit">发表评论</button></p>
@@ -65,8 +59,6 @@
         </div>
 
     </div>
-
-    <%= render '/shared/blog/right' %>
     
 </div>
 <!-- content end -->
@@ -76,7 +68,7 @@
     var comment_text = $("#comment_text").val()
     $.ajax({
           url: '/blogs/add_comments',
-          data: {id:<%= @blog.id%>,comment_text:comment_text},
+          data: {id:<%= @vendor.id%>,comment_text:comment_text},
           type: "get",
           success: function(data){
             $("#comment_text").val("");

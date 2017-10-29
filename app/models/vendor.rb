@@ -1,5 +1,5 @@
 class Vendor < ApplicationRecord
-  has_many :comment
+  has_many :comments
 
   def cover_img_path
   	self.cover_img ? Attachment.find(self.cover_img.to_i).path.url : "/assets/f10.jpg"

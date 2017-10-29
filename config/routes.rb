@@ -17,7 +17,13 @@ Rails.application.routes.draw do
 
   resources :customers
 
-  resources :vendors
+  resources :vendors do
+    collection do
+      post :upload_image
+      get :show_gps
+      get :add_comments
+    end
+  end
 
   #root to: '/customers/index'
   devise_for :employees, path: "admin", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'cmon_let_me_in' }, controllers: { sessions: "admin/sessions", passwords: "admin/passwords"}

@@ -3,7 +3,7 @@ default: &default
   pool: 5
   reconnect: true
   username: root
-  password: 
+  password: jamst@123
 
 development:
   <<: *default

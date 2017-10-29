@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: [:show, :edit, :update, :destroy,:add_comments]
-  layout "vendor"
+  #layout "vendor"
 
   # GET /vendors
   # GET /vendors.json
@@ -22,6 +22,17 @@ class VendorsController < ApplicationController
   # GET /vendors/1.json
   def show
     @vendor.update(view_count: @vendor.view_count.to_i + 1)
+  end
+
+  # 显示gps信息
+  def show_gps
+    require 'exifr/jpeg'
+    @image = Attachment.find(params[:id])
+    path = "#{Rails.root}/public#{@image.path.to_s}"
+    exif = EXIFR::JPEG.new(path)
+    @latitude = exif.gps&.latitude||39.9717219722
+    @longitude = exif.gps&.longitude||116.4911780001
+    redirect_to "http://www.gpsspg.com/maps.htm?maps=3&s=#{@latitude},#{@longitude}"
   end
 
   # GET /vendors/new
@@ -95,6 +106,6 @@ class VendorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
-      params.require(:vendor).permit(:category_id,:title,:content,:cover_img)
+      params.require(:vendor).permit(:category_id,:title,:name,:content,:cover_img)
     end
 end

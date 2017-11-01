@@ -1,0 +1,44 @@
+<!-- content srart -->
+<h3>附近的店：</h3>
+<div class="am-g am-g-fixed vendor-fixed">
+
+    <div class="am-u-md-8 am-u-sm-12">
+      <% @vendors.each do |vendor| %>
+        <article class="am-g blog-entry-article">
+            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+                <a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>"><%= image_tag vendor.cover_img_path ,:class=>"am-u-sm-12",:width=>"600px",:higth=>"400px" %></a>
+            </div>
+            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
+                <span><a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>" class="vendor-color"><%= vendor.name %></a></span>
+                <span> <%= vendor.title %> &nbsp;</span>
+                <span> <%= show_db_time(vendor.created_at) %></span>
+                <h1><a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>"><%= vendor.title %></a></h1>
+                <p><a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>" class="vendor-continue">continue reading</a></p>
+            </div>
+        </article>
+      <% end %>
+      <p><a href="/vendors" class="vendor-continue">>>more</a></p>
+    </div>
+    
+</div>
+<!-- content end -->
+
+
+<!-- content srart -->
+<h3>附近的人</h3>
+<h4>相约一起更实惠哦！！</h4>
+<div class="am-g am-g-fixed vendor-fixed">
+
+    <div class="am-u-md-8 am-u-sm-12">
+
+      <% @customers.each do |cs| %>
+        <article class="am-g blog-entry-article">
+            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
+                <span><a href="/customers/<%= cs.id %>?from_id=<%=@customer.id%>&to_id=<%=cs.id%>" class="vendor-color"><%= cs.name %></a></span>
+            </div>
+        </article>
+      <% end %>
+    </div>
+    
+</div>
+<!-- content end -->

@@ -15,7 +15,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :customers
+  resources :customers do
+    collection do
+      post :upload_image
+    end
+  end
 
   resources :vendors do
     collection do

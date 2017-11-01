@@ -22,6 +22,10 @@ class VendorsController < ApplicationController
   # GET /vendors/1.json
   def show
     @vendor.update(view_count: @vendor.view_count.to_i + 1)
+    if params[:customer_id]
+      cv = CustomersVendor.find_or_create_by(customer_id:params[:customer_id],vendor_id:@vendor.id)
+      cv.update(view_count:cv.view_count.to_i + 1) 
+    end
   end
 
   # 显示gps信息

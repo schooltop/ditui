@@ -5,8 +5,8 @@ class Customer < ApplicationRecord
 	def self.like_customer(latitude,longitude)
       GpsLocation.find_by_sql("select *, abs(latitude-#{latitude}) as min_latitude , abs(longitude-#{longitude}) as min_longitude  
   		from gps_locations
-  		order by min_latitude, min_longitude 
-  		limit 10 ")&.map{|_|_.customer}
+  		order by min_latitude, min_longitude, created_at 
+  		limit 10 ")&.map{|_|_.customer}.uniq
 	end
 
 end

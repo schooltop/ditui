@@ -34,7 +34,7 @@
       <% @customers.each do |cs| %>
         <article class="am-g blog-entry-article">
             <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
-                <span><a href="/customers/<%= cs.id %>" class="vendor-color"><%= cs.name %></a></span>
+                <span><a href="/customers/<%= cs.id %>?from_id=<%=@customer.id%>&to_id=<%=cs.id%>" class="vendor-color"><%= cs.name %></a></span>
             </div>
         </article>
       <% end %>

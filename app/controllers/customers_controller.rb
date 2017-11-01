@@ -12,7 +12,10 @@ class CustomersController < ApplicationController
   # GET /vendors/1
   # GET /vendors/1.json
   def show
-  
+    if params[:from_id]
+      cv = CustomerVisit.find_or_create_by(from_id:params[:from_id],to_id:params[:to_id])
+      cv.update(view_count:cv.view_count.to_i + 1) 
+    end 
   end
 
   # GET /vendors/new

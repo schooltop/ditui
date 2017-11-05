@@ -8,15 +8,16 @@
 
       <% @customer.vendors.each do |vendor| %>
         <article class="am-g blog-entry-article">
+            <h1>
+              <a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>"><%= vendor.title %></a>
+            </h1>
+
             <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
-                <%= image_tag vendor.cover_img_path ,:class=>"am-u-sm-12",:width=>"600px",:higth=>"400px" %>
+                <a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>"><%= image_tag vendor.cover_img_path ,:class=>"am-u-sm-12",:width=>"600px",:higth=>"400px" %></a>
             </div>
             <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
-                <span><a href="/vendors/<%= vendor.id %>" class="vendor-color"><%= vendor.name %></a></span>
-                <span> <%= vendor.title %> &nbsp;</span>
-                <span><%= show_db_time(vendor.created_at) %></span>
-                <h1><a href="/vendors/<%= vendor.id %>"><%= vendor.title %></a></h1>
-                <p><a href="/vendors/<%= vendor.id %>" class="vendor-continue">continue reading</a></p>
+                <span>访问热度：<a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>" class="vendor-color"><%= vendor.view_count %></a></span>
+                <span>入驻时间：<%= show_db_time(vendor.created_at) %></span>
             </div>
         </article>
       <% end %>

@@ -6,7 +6,9 @@
       <% @vendors.each do |vendor| %>
         <article class="am-g blog-entry-article">
             <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
-                <%= image_tag vendor.cover_img_path ,:class=>"am-u-sm-12",:width=>"600px",:higth=>"400px" %>
+                <a href="/vendors/<%= vendor.id %>">
+                  <%= image_tag vendor.cover_img_path ,:class=>"am-u-sm-12",:width=>"600px",:higth=>"400px" %>
+                </a>
             </div>
             <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
                 <span><a href="/vendors/<%= vendor.id %>" class="vendor-color"><%= vendor.name %></a></span>
@@ -17,9 +19,10 @@
             </div>
         </article>
       <% end %>
+      <%= paginate @vendors %>
     </div>
-    
+    <%= render '/shared/web/right' %>
 </div>
 <!-- content end -->
-
+ 
 

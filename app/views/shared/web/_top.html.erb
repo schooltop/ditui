@@ -1,0 +1,33 @@
+<!-- nav start -->
+<nav class="am-g am-g-fixed blog-fixed blog-nav">
+<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only blog-button" data-am-collapse="{target: '#blog-collapse'}" ><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="blog-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav">
+      <li class="am-active"><a href="/"><%= image_tag "/assets/logo_a.png" ,:width=>"40", :height=> "40"%>  首页</a></li>
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          文章 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="/blogs?category_id=1">1. 文学</a></li>         
+          <li><a href="/blogs?category_id=2">2. 技术</a></li>
+        </ul>
+      </li>
+      <li><a href="/pictures">图片</a></li>
+    </ul>
+    <%= form_tag top_search_vendors_path, class: 'am-topbar-form am-topbar-right am-form-inline', method: :get, id: 'top_search_form' do %>
+      <div class="am-form-group">
+         <input type="text" class="am-form-field am-input-sm" name="title" id="top_search" placeholder="搜索" value="<%= params[:title] %>">
+      </div>
+    <% end %>
+  </div>
+</nav>
+<!-- nav end -->
+<hr>
+
+<script type="text/javascript">
+  $("#top_search").change(function(){
+   $("#top_search_form").submit();
+});
+</script>

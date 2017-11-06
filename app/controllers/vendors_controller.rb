@@ -1,11 +1,11 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: [:show, :edit, :update, :destroy,:add_comments]
-  #layout "vendor"
+  layout "web"
 
   # GET /vendors
   # GET /vendors.json
   def index
-    @vendors = Vendor.all
+    @vendors = Vendor.all.page(params[:page]).per(10)
   end
 
   def top_search

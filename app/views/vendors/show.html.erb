@@ -17,13 +17,11 @@
             <%= @vendor.content.html_safe %>
         </div>
     
-        <div class="am-g blog-article-widget blog-article-margin">
-          <div class="am-u-lg-4 am-u-md-5 am-u-sm-7 am-u-sm-centered blog-text-center">
-            <h3 class="blog-comment">到访用户</h3>
-            <% @vendor.customers.each do |cs| %>
-              <a href="/customers/<%= cs.id %>" class="vendor-color"><%= cs.name %></a> 
-            <% end %>
-          </div>
+        <div class="blog-sidebar-widget blog-bor" id="blog_comments_list" >
+          <h3 class="blog-comment">到访用户</h3>
+          <% @vendor.customers.each do |cs| %>
+            <a href="/customers/<%= cs.id %>" class="vendor-color"><%= cs.name %></a> 
+          <% end %>
         </div>
 
         <%= simple_form_for Comment.new, url: add_comments_vendors_path, method: :get, html: {id:"add_comment_form",class:"am-form am-g"} do |f| %>
@@ -44,9 +42,13 @@
         </div>
       </article>
     </div>
+
+    <%= render '/shared/web/right' %>
     
 </div>
 <!-- content end -->
+
+
 
 <script type="text/javascript">
   $("#add_comments_submit").click(function(){

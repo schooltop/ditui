@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:index,:show, :edit, :update, :destroy,:add_comments]
-  #layout "vendor"
+  layout "web"
 
   # GET /vendors
   # GET /vendors.json

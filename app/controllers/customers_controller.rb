@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_user!, except: :logout
+  before_action :authenticate_user!, except: [:logout,:new,:create,:index]
   before_action :set_customer, only: [:index,:show, :edit, :update, :destroy,:add_comments]
   layout "web"
 

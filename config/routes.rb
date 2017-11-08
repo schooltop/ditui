@@ -13,11 +13,20 @@ Rails.application.routes.draw do
         get  :desboart
       end
     end
+
+    resources :users do
+      collection do
+        root to: 'users#index'
+        get  :desboart
+      end
+    end
+
   end
 
   resources :customers do
     collection do
       post :upload_image
+      get :logout
     end
   end
   
@@ -30,7 +39,10 @@ Rails.application.routes.draw do
     end
   end
 
+  
+
   root to: 'vendors#index'
   devise_for :employees, path: "admin", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'cmon_let_me_in' }, controllers: { sessions: "admin/sessions", passwords: "admin/passwords"}
+  devise_for :users, path: "web", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'cmon_let_me_in' }, controllers: { sessions: "web/sessions", passwords: "web/passwords"}
 
 end

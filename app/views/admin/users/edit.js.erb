@@ -1,0 +1,15 @@
+$('#user_modal').remove();
+$('body').append('<div class="ui modal" id="user_modal"><i class="close icon"></i><h2 class="ui dividing header">修改user</h2><%= j(render 'edit') %></div>');
+$('#user_modal').modal('setting', {autofocus: false}).modal('show');
+$('select.dropdown').dropdown();
+
+// TODO表单校验
+  $("#commition").click(function(){
+    if( $("#user_name").val() !="" ){
+      $("#edit_point_vendor").submit(); 
+    }else{
+      $("#form_message").text("请完善信息！").show(200);
+    }
+  });
+  
+

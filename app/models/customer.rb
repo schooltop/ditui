@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
 	has_many :gps_locations
+  belongs_to :user
 	has_and_belongs_to_many :vendors, join_table: :customers_vendors
 
 	def self.like_customer(latitude,longitude)
@@ -17,6 +18,6 @@ class Customer < ApplicationRecord
       	order by count_customer_ids desc
       	limit 5
       	")
-    end
+  end
 
 end

@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  before_action :authenticate_user!, except: :logout
   before_action :set_customer, only: [:index,:show, :edit, :update, :destroy,:add_comments]
   layout "web"
 
@@ -78,6 +79,13 @@ class CustomersController < ApplicationController
   def upload_image
     attachment = Attachment.create(attachment_entity_type: "Customer", path: params[:wang_editor_file], created_by: 1 )
     render plain: attachment.path
+  end
+
+  # DELETE /resource/sign_out
+  def logout
+    sign_out
+    redirect_to vendors_path
+    #super
   end
 
   private

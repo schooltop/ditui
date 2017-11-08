@@ -28778,3 +28778,67 @@ Processing by VendorsController#index as HTML
 Completed 200 OK in 62ms (Views: 58.8ms | ActiveRecord: 1.6ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+Started GET "/vendors" for 127.0.0.1 at 2017-11-08 23:35:45 +0800
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.5ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.8ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (20.0ms)
+  Rendered vendors/index.html.erb within layouts/web (97.4ms)
+  Rendered shared/web/_top.html.erb (5.6ms)
+  Rendered shared/web/_footer.html.erb (0.4ms)
+Completed 200 OK in 438ms (Views: 399.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2017-11-08 23:36:55 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (2.4ms)
+  Rendered vendors/index.html.erb within layouts/web (12.5ms)
+  Rendered shared/web/_top.html.erb (2.5ms)
+  Rendered shared/web/_footer.html.erb (0.7ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2017-11-08 23:37:20 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.6ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (4.5ms)
+  Rendered vendors/index.html.erb within layouts/web (16.0ms)
+  Rendered shared/web/_top.html.erb (1.4ms)
+  Rendered shared/web/_footer.html.erb (1.5ms)
+Completed 200 OK in 59ms (Views: 53.7ms | ActiveRecord: 1.7ms)
+
+

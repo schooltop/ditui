@@ -28666,3 +28666,115 @@ Redirected to http://www.gpsspg.com/maps.htm?maps=3&s=30.618017277777778,114.345
 Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+Started GET "/vendors/1" for 127.0.0.1 at 2017-11-08 23:30:17 +0800
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by VendorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` WHERE `vendors`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `vendors` SET `view_count` = 12, `updated_at` = '2017-11-08 23:30:17' WHERE `vendors`.`id` = 1[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering vendors/show.html.erb within layouts/web
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT `customers`.* FROM `customers` INNER JOIN `customers_vendors` ON `customers`.`id` = `customers_vendors`.`customer_id` WHERE `customers_vendors`.`vendor_id` = 1[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`vendor_id` = 1 ORDER BY `comments`.`id` DESC[0m
+  Rendered vendors/_add_comments.html.erb (11.4ms)
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (21.0ms)
+  Rendered vendors/show.html.erb within layouts/web (148.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (25.3ms)
+  Rendered shared/web/_footer.html.erb (0.4ms)
+Completed 200 OK in 535ms (Views: 444.1ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/vendors/show_gps?id=0" for 127.0.0.1 at 2017-11-08 23:30:18 +0800
+Processing by VendorsController#show_gps as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mAttachment Load (0.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 58ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Attachment with 'id'=0):
+  
+app/controllers/vendors_controller.rb:37:in `show_gps'
+Started GET "/vendors/show_gps?id=0" for 127.0.0.1 at 2017-11-08 23:30:18 +0800
+Processing by VendorsController#show_gps as HTML
+  Parameters: {"id"=>"0"}
+  [1m[35m (1.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mAttachment Load (19.6ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 94ms (ActiveRecord: 36.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Attachment with 'id'=0):
+  
+app/controllers/vendors_controller.rb:37:in `show_gps'
+Started GET "/vendors/1" for 127.0.0.1 at 2017-11-08 23:30:25 +0800
+Processing by VendorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` WHERE `vendors`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `vendors` SET `view_count` = 13, `updated_at` = '2017-11-08 23:30:25' WHERE `vendors`.`id` = 1[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering vendors/show.html.erb within layouts/web
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT `customers`.* FROM `customers` INNER JOIN `customers_vendors` ON `customers`.`id` = `customers_vendors`.`customer_id` WHERE `customers_vendors`.`vendor_id` = 1[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`vendor_id` = 1 ORDER BY `comments`.`id` DESC[0m
+  Rendered vendors/_add_comments.html.erb (5.5ms)
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.6ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (3.6ms)
+  Rendered vendors/show.html.erb within layouts/web (16.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (3.2ms)
+  Rendered shared/web/_footer.html.erb (0.3ms)
+Completed 200 OK in 60ms (Views: 46.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/customers/logout" for 127.0.0.1 at 2017-11-08 23:30:28 +0800
+Processing by CustomersController#logout as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vendors
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2017-11-08 23:30:28 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.5ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.5ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (4.5ms)
+  Rendered vendors/index.html.erb within layouts/web (29.0ms)
+  Rendered shared/web/_top.html.erb (4.8ms)
+  Rendered shared/web/_footer.html.erb (0.3ms)
+Completed 200 OK in 62ms (Views: 58.8ms | ActiveRecord: 1.6ms)
+
+

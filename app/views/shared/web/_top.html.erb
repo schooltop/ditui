@@ -20,9 +20,11 @@
       <div class="am-form-group">
          <input type="text" class="am-form-field am-input-sm" name="title" id="top_search" placeholder="搜索" value="<%= params[:title] %>">
       </div>
-      <a class="item" rel="nofollow" href="/customers/logout">
-          退出 <i class="sign out icon"></i>
-      </a>
+      <% if current_user %>
+        <a class="item" rel="nofollow" href="/customers/logout">
+            退出 <i class="sign out icon"></i>
+        </a>
+      <% end %>
     <% end %>
   </div>
 </nav>

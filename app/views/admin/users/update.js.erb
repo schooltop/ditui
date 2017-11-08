@@ -1,0 +1,16 @@
+<% if @user.errors.blank? %>
+  $("#user_<%= @user.id %>").replaceWith("<%= j(render partial: 'list', locals: { user: @user} ) %>");
+  $("#user_modal").modal('hide');
+<% else %>
+  $(".field .red.pointing").remove();
+  <% @user.errors.messages.each do |key, value| %>
+    $("#user_<%= key %>").parent().addClass('error');
+    $("#user_<%= key %>").parent().append("<div class='ui basic red pointing prompt label transition visible'><%= value[0] %></div>");
+  <% end %>
+<% end %>
+
+$(".button").popup();
+$(".icon").popup();
+$(document).find('.dropdown').dropdown({
+    on: 'hover'
+});

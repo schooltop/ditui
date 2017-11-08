@@ -9,4 +9,14 @@ class Customer < ApplicationRecord
   		limit 10 ")&.map{|_|_.customer}.uniq
 	end
 
+	def self.view_count_top
+      CustomersVendor.find_by_sql("select customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	")
+    end
+
 end

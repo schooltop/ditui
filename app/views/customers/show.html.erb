@@ -1,13 +1,18 @@
-<h3>他基本信息：</h3>
-<%= @customer.name%>
-<!-- content srart -->
-<h3>他关注过的店：</h3>
+
 <div class="am-g am-g-fixed vendor-fixed">
 
     <div class="am-u-md-8 am-u-sm-12">
 
+    
+
       <% @customer.vendors.each do |vendor| %>
         <article class="am-g blog-entry-article">
+
+           <h3>他基本信息：</h3>
+           <%= @customer.name%>
+           <!-- content srart -->
+           <h3>他关注过的店：</h3>
+
             <h1>
               <a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>"><%= vendor.title %></a>
             </h1>

@@ -23,6 +23,11 @@ Rails.application.routes.draw do
 
   end
 
+  namespace :web do
+    resources :center
+
+  end
+
   resources :customers do
     collection do
       post :upload_image

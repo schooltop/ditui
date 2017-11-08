@@ -7,14 +7,15 @@
       <li class="am-active"><a href="/"><%= image_tag "/assets/logo_a.png" ,:width=>"40", :height=> "40"%>  首页</a></li>
       <li class="am-dropdown" data-am-dropdown>
         <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-          文章 <span class="am-icon-caret-down"></span>
+          商店 <span class="am-icon-caret-down"></span>
         </a>
         <ul class="am-dropdown-content">
-          <li><a href="/blogs?category_id=1">1. 文学</a></li>         
-          <li><a href="/blogs?category_id=2">2. 技术</a></li>
+          <li><a href="/vendors/new">1. 创建商店</a></li>         
+          <li><a href="/vendors">2. 附近的商店</a></li>
         </ul>
       </li>
-      <li><a href="/pictures">图片</a></li>
+      <li><a href="/customers/new">拍拍</a></li>
+      <% if current_user %><li><a href="/web/center">个人中心</a></li><% end %>
     </ul>
     <%= form_tag top_search_vendors_path, class: 'am-topbar-form am-topbar-right am-form-inline', method: :get, id: 'top_search_form' do %>
       <div class="am-form-group">

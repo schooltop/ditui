@@ -2,6 +2,15 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
     root to: 'employees#desboart'
+
+    resources :trackings, only: :index do
+      collection do
+        get :analysis
+        get :delete_tracking
+        get :hot_analysis
+      end
+    end
+
     resources :employees do
       collection do
         get  :forget_password
@@ -25,7 +34,6 @@ Rails.application.routes.draw do
 
   namespace :web do
     resources :center
-
   end
 
   resources :customers do
@@ -44,7 +52,8 @@ Rails.application.routes.draw do
     end
   end
 
-  
+  resources :trackings 
+
 
   root to: 'vendors#index'
   devise_for :employees, path: "admin", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'cmon_let_me_in' }, controllers: { sessions: "admin/sessions", passwords: "admin/passwords"}

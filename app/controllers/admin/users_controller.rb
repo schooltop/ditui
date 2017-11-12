@@ -1,6 +1,5 @@
 class Admin::UsersController < Admin::BaseController
 
-
 	def index
    	 @q = SearchParams.new(params[:search_params] || {})
    	 @users = User.default_where(@q.attributes(self)).page(params[:page]).per(10)

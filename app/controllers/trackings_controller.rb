@@ -31,9 +31,8 @@ class TrackingsController < ApplicationController
     cache_array("uuids_list",cookies[:opxPID],"uniq")
 
     # 当前用户关联
-    if params[:opxid].to_i >= 0
-      cache_value(cookies[:opxPID],params[:opxid].to_i) 
-    end
+    opxid = Customer.find_by(name:cookies[:opxPID])
+    cache_value(cookies[:opxPID],opxid.to_i) 
 
     # 根据url来触发响应
     # 根据

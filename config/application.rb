@@ -73,6 +73,6 @@ end
   # 定义成可配置
   TRACKING_TAG = {"customers"=>"客户","vendor/"=>"供应商"}
 
-  DOMAIN = Rails.env.production? ? 'www.ditui.com' : '192.168.0.229'                 
+  DOMAIN = Rails.env.production? ? 'www.ditui.com' : 'localhost:3000'                 
 
 

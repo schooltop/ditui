@@ -8,7 +8,7 @@ class Admin::TrackingsController < Admin::BaseController
   end
   	
   def analysis
-    @employee = User.find(params[:em_id].to_i) if params[:em_id].to_i > 0
+    @customer = Customer.find(params[:em_id].to_i) if params[:em_id].to_i > 0
     @opxpid = params[:opxpid]
     @message = cache_read("#{@opxpid}_message")||{}
     @urls = cache_read("#{@opxpid}_url_list").reverse||[]

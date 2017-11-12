@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
 
   # GET /vendors/new
   def new
-    @customer = Customer.new(name:"jamst")
+    @customer = Customer.new(name:cookies[:opxPID])
   end
 
   # GET /vendors/1/edit

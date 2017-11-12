@@ -29415,3 +29415,1175 @@ Processing by Web::CenterController#index as HTML
 Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.3ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(7488876540239811570, 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddBdIdToVendors (20171112120849)
+  [1m[35m (44.9ms)[0m  [1m[35mALTER TABLE `vendors` ADD `db_id` int COMMENT 'bd'[0m
+  [1m[35m (40.7ms)[0m  [1m[35mALTER TABLE `vendors` ADD `dealer_id` int COMMENT '撮合'[0m
+  [1m[35m (37.0ms)[0m  [1m[35mALTER TABLE `vendors` ADD `cs_id` int COMMENT '客服'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171112120849')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(7488876540239811570)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `attachments`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'attachments'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `categories`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'categories'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `comments`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'comments'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customer_visits`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'customers'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `customers_vendors`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `employees`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'employees'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `employees_roles`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `gps_locations`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'gps_locations'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'roles'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `tags`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tags'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `vendors`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'vendors'[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(7488876540239811570, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddUserIdToCustomers (20171112123635)
+  [1m[35m (45.0ms)[0m  [1m[35mALTER TABLE `customers` ADD `user_id` int COMMENT '用户关联'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171112123635')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(7488876540239811570)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `attachments`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'attachments'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `categories`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'categories'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `comments`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'comments'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customer_visits`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'customers'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customers_vendors`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `employees`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'employees'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `employees_roles`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `gps_locations`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'gps_locations'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'roles'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `tags`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tags'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `vendors`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'vendors'[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+Started GET "/" for 127.0.0.1 at 2017-11-12 21:24:16 +0800
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (1.2ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.9ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (18.8ms)
+  Rendered vendors/index.html.erb within layouts/web (68.6ms)
+Completed 500 Internal Server Error in 747ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_uer' for #<#<Class:0x007ff4a31fe2e0>:0x007ff4a3131628>
+Did you mean?  current_user):
+    42:         var opxurl = escape(document.URL) ;
+    43:         var opxreferrer = escape(document.referrer) ;
+    44:         var opxuserAgent = escape(navigator.userAgent) ;
+    45:         var opxid = "<%= current_uer.id.to_i %>";
+    46:         var opxParams = "opxtitle="+opxtitle+";"+"opxurl="+opxurl+";"+"opxreferrer="+opxreferrer+";"+"opxid="+opxid+";"+"opxcookie="+opxcookie+";"+"opxuserAgent="+opxuserAgent;
+    47:         opxLoad(opxProtocol + opxRegion, opxParams);
+    48:     </script>
+  
+app/views/layouts/web.html.erb:45:in `_app_views_layouts_web_html_erb__2382119677014314164_70344342312320'
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-11-12 21:24:18 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-12 21:24:58 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.6ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.6ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (3.2ms)
+  Rendered vendors/index.html.erb within layouts/web (13.8ms)
+Completed 500 Internal Server Error in 310ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_uer' for #<#<Class:0x007ff4a31fe2e0>:0x007ff4a26bf208>
+Did you mean?  current_user):
+    42:         var opxurl = escape(document.URL) ;
+    43:         var opxreferrer = escape(document.referrer) ;
+    44:         var opxuserAgent = escape(navigator.userAgent) ;
+    45:         var opxid = "<%= current_uer&.id.to_i %>";
+    46:         var opxParams = "opxtitle="+opxtitle+";"+"opxurl="+opxurl+";"+"opxreferrer="+opxreferrer+";"+"opxid="+opxid+";"+"opxcookie="+opxcookie+";"+"opxuserAgent="+opxuserAgent;
+    47:         opxLoad(opxProtocol + opxRegion, opxParams);
+    48:     </script>
+  
+app/views/layouts/web.html.erb:45:in `_app_views_layouts_web_html_erb__2382119677014314164_70344336880240'
+Started GET "/" for 127.0.0.1 at 2017-11-12 21:25:21 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.5ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.6ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (3.6ms)
+  Rendered vendors/index.html.erb within layouts/web (11.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (0.8ms)
+  Rendered shared/web/_footer.html.erb (0.3ms)
+Completed 200 OK in 47ms (Views: 41.4ms | ActiveRecord: 2.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/i/app-icon72x72@2x.png"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/i/favicon.png"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/customers/logout" for 127.0.0.1 at 2017-11-12 21:25:24 +0800
+Processing by CustomersController#logout as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vendors
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2017-11-12 21:25:24 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.5ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (2.8ms)
+  Rendered vendors/index.html.erb within layouts/web (12.6ms)
+  Rendered shared/web/_top.html.erb (0.9ms)
+  Rendered shared/web/_footer.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/vendors/1" for 127.0.0.1 at 2017-11-12 21:25:41 +0800
+Processing by VendorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` WHERE `vendors`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `vendors` SET `view_count` = 15, `updated_at` = '2017-11-12 21:25:41' WHERE `vendors`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering vendors/show.html.erb within layouts/web
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT `customers`.* FROM `customers` INNER JOIN `customers_vendors` ON `customers`.`id` = `customers_vendors`.`customer_id` WHERE `customers_vendors`.`vendor_id` = 1[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`vendor_id` = 1 ORDER BY `comments`.`id` DESC[0m
+  Rendered vendors/_add_comments.html.erb (7.0ms)
+  [1m[36mVendor Load (1.1ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (3.7ms)
+  Rendered vendors/show.html.erb within layouts/web (88.5ms)
+  Rendered shared/web/_top.html.erb (1.1ms)
+  Rendered shared/web/_footer.html.erb (0.5ms)
+Completed 200 OK in 122ms (Views: 110.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/vendors/assets/i/app-icon72x72@2x.png" for 127.0.0.1 at 2017-11-12 21:25:41 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/vendors/assets/i/app-icon72x72@2x.png"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/vendors/assets/i/favicon.png" for 127.0.0.1 at 2017-11-12 21:25:42 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/vendors/assets/i/favicon.png"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin" for 127.0.0.1 at 2017-11-12 21:25:53 +0800
+Processing by Admin::EmployeesController#desboart as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2017-11-12 21:25:53 +0800
+Processing by Admin::SessionsController#new as HTML
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (56.6ms)
+Completed 200 OK in 85ms (Views: 59.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2017-11-12 21:26:59 +0800
+Processing by Admin::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I1eKneFEz/oZA29swgcMiqrBSK8w2ukgZ+ToFf9JFS9RQ/ede8zcBF0jTvBwarlS/utAg91dXfgYRbZFkPH+hA==", "employee"=>{"email"=>"107422244@qq.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"登录"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`email` = '107422244@qq.com' ORDER BY `employees`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/admin/employees
+Completed 302 Found in 85ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/employees" for 127.0.0.1 at 2017-11-12 21:26:59 +0800
+Processing by Admin::EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/employees/index.html.erb within layouts/application
+  Rendered admin/employees/_search_form.html.erb (5.3ms)
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` LIMIT 10 OFFSET 0[0m
+  Rendered collection of admin/employees/_list.html.erb [1 times] (1.9ms)
+  Rendered admin/employees/index.html.erb within layouts/application (19.9ms)
+  Rendered shared/admin/_top_bar.html.erb (1.3ms)
+  Rendered shared/admin/_sidebar.html.erb (1.0ms)
+Completed 200 OK in 80ms (Views: 71.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 21:29:01 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (0.6ms)
+  Rendered admin/trackings/_index.html.erb (3.1ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (5.0ms)
+  Rendered shared/admin/_top_bar.html.erb (2.1ms)
+  Rendered shared/admin/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 41ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-12 21:29:26 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (2.9ms)
+  Rendered vendors/index.html.erb within layouts/web (16.3ms)
+  Rendered shared/web/_top.html.erb (1.2ms)
+  Rendered shared/web/_footer.html.erb (0.6ms)
+Completed 200 OK in 44ms (Views: 38.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/vendors/1" for 127.0.0.1 at 2017-11-12 21:29:28 +0800
+Processing by VendorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` WHERE `vendors`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `vendors` SET `view_count` = 16, `updated_at` = '2017-11-12 21:29:28' WHERE `vendors`.`id` = 1[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering vendors/show.html.erb within layouts/web
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT `customers`.* FROM `customers` INNER JOIN `customers_vendors` ON `customers`.`id` = `customers_vendors`.`customer_id` WHERE `customers_vendors`.`vendor_id` = 1[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`vendor_id` = 1 ORDER BY `comments`.`id` DESC[0m
+  Rendered vendors/_add_comments.html.erb (2.3ms)
+  [1m[36mVendor Load (0.5ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (3.4ms)
+  Rendered vendors/show.html.erb within layouts/web (13.4ms)
+  Rendered shared/web/_top.html.erb (0.9ms)
+  Rendered shared/web/_footer.html.erb (0.3ms)
+Completed 200 OK in 43ms (Views: 33.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/vendors/show_gps?id=0" for 127.0.0.1 at 2017-11-12 21:29:29 +0800
+Processing by VendorsController#show_gps as HTML
+  Parameters: {"id"=>"0"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/web/login" for 127.0.0.1 at 2017-11-12 21:29:29 +0800
+Processing by Web::SessionsController#new as HTML
+  Rendering web/sessions/new.html.erb
+  Rendered web/sessions/new.html.erb (34.5ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/web/login" for 127.0.0.1 at 2017-11-12 21:29:35 +0800
+Processing by Web::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s0NG1BxF7LOg+TKfTtlpGe5w/9RxuzoM7nltmhp1gqlZI6FvS3aZAIxhWORKSpRPCMO85nV/r6Jb81cqrd//TA==", "user"=>{"email"=>"jamst2@qq.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"登录"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'jamst2@qq.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  `customers`.* FROM `customers` WHERE `customers`.`name` = '2017111221252158539088877365' LIMIT 1[0m
+Redirected to http://localhost:3000/vendors
+Completed 302 Found in 70ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2017-11-12 21:29:35 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.5ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (2.8ms)
+  Rendered vendors/index.html.erb within layouts/web (12.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (1.3ms)
+  Rendered shared/web/_footer.html.erb (0.8ms)
+Completed 200 OK in 42ms (Views: 37.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 21:29:40 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (1.5ms)
+  Rendered admin/trackings/_index.html.erb (4.6ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (7.0ms)
+  Rendered shared/admin/_top_bar.html.erb (1.2ms)
+  Rendered shared/admin/_sidebar.html.erb (2.2ms)
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 21:29:42 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (0.6ms)
+  Rendered admin/trackings/_index.html.erb (2.4ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (3.8ms)
+  Rendered shared/admin/_top_bar.html.erb (1.7ms)
+  Rendered shared/admin/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 21:29:43 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (0.6ms)
+  Rendered admin/trackings/_index.html.erb (2.4ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (3.9ms)
+  Rendered shared/admin/_top_bar.html.erb (1.6ms)
+  Rendered shared/admin/_sidebar.html.erb (1.6ms)
+Completed 200 OK in 42ms (Views: 38.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vendors/1" for 127.0.0.1 at 2017-11-12 21:36:55 +0800
+Processing by VendorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` WHERE `vendors`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `vendors` SET `view_count` = 17, `updated_at` = '2017-11-12 21:36:55' WHERE `vendors`.`id` = 1[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering vendors/show.html.erb within layouts/web
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT `customers`.* FROM `customers` INNER JOIN `customers_vendors` ON `customers`.`id` = `customers_vendors`.`customer_id` WHERE `customers_vendors`.`vendor_id` = 1[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`vendor_id` = 1 ORDER BY `comments`.`id` DESC[0m
+  Rendered vendors/_add_comments.html.erb (3.6ms)
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (9.7ms)
+  Rendered vendors/show.html.erb within layouts/web (39.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (1.2ms)
+  Rendered shared/web/_footer.html.erb (0.4ms)
+Completed 200 OK in 105ms (Views: 73.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 21:38:21 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (8.5ms)
+  Rendered admin/trackings/_index.html.erb (10.4ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (11.9ms)
+  Rendered shared/admin/_top_bar.html.erb (1.2ms)
+  Rendered shared/admin/_sidebar.html.erb (1.0ms)
+Completed 200 OK in 61ms (Views: 38.4ms | ActiveRecord: 1.2ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 21:39:11 +0800
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (0.9ms)
+  Rendered admin/trackings/_index.html.erb (3.3ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (7.3ms)
+  Rendered shared/admin/_top_bar.html.erb (1.6ms)
+  Rendered shared/admin/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 364ms (Views: 305.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 21:40:38 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (0.6ms)
+  Rendered admin/trackings/_index.html.erb (2.2ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (3.7ms)
+  Rendered shared/admin/_top_bar.html.erb (2.4ms)
+  Rendered shared/admin/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 70ms (Views: 33.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 21:43:52 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (1.3ms)
+  Rendered admin/trackings/_index.html.erb (4.4ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (6.3ms)
+  Rendered shared/admin/_top_bar.html.erb (2.2ms)
+  Rendered shared/admin/_sidebar.html.erb (2.1ms)
+Completed 200 OK in 92ms (Views: 55.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 22:06:16 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (0.6ms)
+  Rendered admin/trackings/_index.html.erb (2.5ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (4.2ms)
+  Rendered shared/admin/_top_bar.html.erb (1.6ms)
+  Rendered shared/admin/_sidebar.html.erb (1.0ms)
+Completed 200 OK in 60ms (Views: 34.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2017-11-12 22:06:20 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.6ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (17.2ms)
+  Rendered vendors/index.html.erb within layouts/web (68.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (0.9ms)
+  Rendered shared/web/_footer.html.erb (0.3ms)
+Completed 200 OK in 146ms (Views: 126.7ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 22:06:23 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (0.6ms)
+  Rendered admin/trackings/_index.html.erb (2.5ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (4.1ms)
+  Rendered shared/admin/_top_bar.html.erb (1.2ms)
+  Rendered shared/admin/_sidebar.html.erb (1.2ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 0.4ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+Started GET "/vendors" for 127.0.0.1 at 2017-11-12 22:10:08 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (2.9ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (19.0ms)
+  Rendered vendors/index.html.erb within layouts/web (64.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (1.1ms)
+  Rendered shared/web/_footer.html.erb (0.4ms)
+Completed 200 OK in 119ms (Views: 101.5ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2017-11-12 22:11:41 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (2.6ms)
+  Rendered vendors/index.html.erb within layouts/web (12.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (1.2ms)
+  Rendered shared/web/_footer.html.erb (0.5ms)
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/trackings?rnum=867053331153280.9&opxtitle=image%20|%20Amaze%20UI%20Examples&opxurl=http%3A//localhost%3A3000/vendors&opxreferrer=http%3A//localhost%3A3000/web/login&opxid=1&opxuserAgent=Mozilla/5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010_12_4%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome/61.0.3163.100%20Safari/537.36&opxReferrer=http%3A%2F%2Flocalhost%3A3000%2Fweb%2Flogin" for 127.0.0.1 at 2017-11-12 22:11:41 +0800
+Processing by TrackingsController#index as */*
+  Parameters: {"rnum"=>"867053331153280.9", "opxtitle"=>"image | Amaze UI Examples", "opxurl"=>"http://localhost:3000/vendors", "opxreferrer"=>"http://localhost:3000/web/login", "opxid"=>"1", "opxuserAgent"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36", "opxReferrer"=>"http://localhost:3000/web/login"}
+Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidCrossOriginRequest (Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.):
+  
+actionpack (5.1.2) lib/action_controller/metal/request_forgery_protection.rb:245:in `verify_same_origin_request'
+activesupport (5.1.2) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.2) lib/active_support/callbacks.rb:246:in `block in halting'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `block in invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `each'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/vendors" for 127.0.0.1 at 2017-11-12 22:14:09 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.3ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (2.5ms)
+  Rendered vendors/index.html.erb within layouts/web (12.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (0.8ms)
+  Rendered shared/web/_footer.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/trackings?rnum=245127776449494.78&opxtitle=image%20|%20Amaze%20UI%20Examples&opxurl=http%3A//localhost%3A3000/vendors&opxreferrer=http%3A//localhost%3A3000/web/login&opxid=1&opxuserAgent=Mozilla/5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010_12_4%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome/61.0.3163.100%20Safari/537.36&opxReferrer=http%3A%2F%2Flocalhost%3A3000%2Fweb%2Flogin" for 127.0.0.1 at 2017-11-12 22:14:09 +0800
+Processing by TrackingsController#index as */*
+  Parameters: {"rnum"=>"245127776449494.78", "opxtitle"=>"image | Amaze UI Examples", "opxurl"=>"http://localhost:3000/vendors", "opxreferrer"=>"http://localhost:3000/web/login", "opxid"=>"1", "opxuserAgent"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36", "opxReferrer"=>"http://localhost:3000/web/login"}
+Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidCrossOriginRequest (Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.):
+  
+actionpack (5.1.2) lib/action_controller/metal/request_forgery_protection.rb:245:in `verify_same_origin_request'
+activesupport (5.1.2) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.2) lib/active_support/callbacks.rb:246:in `block in halting'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `block in invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `each'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/vendors" for 127.0.0.1 at 2017-11-12 22:15:42 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.7ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.7ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (4.6ms)
+  Rendered vendors/index.html.erb within layouts/web (20.2ms)
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (4.3ms)
+  Rendered shared/web/_footer.html.erb (0.4ms)
+Completed 200 OK in 83ms (Views: 71.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/trackings?rnum=923582115283453.6&opxtitle=image%20|%20Amaze%20UI%20Examples&opxurl=http%3A//localhost%3A3000/vendors&opxreferrer=http%3A//localhost%3A3000/web/login&opxid=6324465726764&opxuserAgent=Mozilla/5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010_12_4%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome/61.0.3163.100%20Safari/537.36&opxReferrer=http%3A%2F%2Flocalhost%3A3000%2Fweb%2Flogin" for 127.0.0.1 at 2017-11-12 22:15:42 +0800
+Processing by TrackingsController#index as */*
+  Parameters: {"rnum"=>"923582115283453.6", "opxtitle"=>"image | Amaze UI Examples", "opxurl"=>"http://localhost:3000/vendors", "opxreferrer"=>"http://localhost:3000/web/login", "opxid"=>"6324465726764", "opxuserAgent"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36", "opxReferrer"=>"http://localhost:3000/web/login"}
+Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidCrossOriginRequest (Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.):
+  
+actionpack (5.1.2) lib/action_controller/metal/request_forgery_protection.rb:245:in `verify_same_origin_request'
+activesupport (5.1.2) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.2) lib/active_support/callbacks.rb:246:in `block in halting'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `block in invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `each'
+activesupport (5.1.2) lib/active_support/callbacks.rb:511:in `invoke_after'
+activesupport (5.1.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+Started GET "/vendors" for 127.0.0.1 at 2017-11-12 22:18:55 +0800
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.5ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (15.5ms)
+  Rendered vendors/index.html.erb within layouts/web (60.8ms)
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (22.8ms)
+  Rendered shared/web/_footer.html.erb (0.4ms)
+Completed 200 OK in 444ms (Views: 418.1ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2017-11-12 22:19:54 +0800
+Processing by VendorsController#index as HTML
+  Rendering vendors/index.html.erb within layouts/web
+  [1m[36mVendor Load (0.8ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` LIMIT 10 OFFSET 0[0m
+  [1m[36mAttachment Load (0.8ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`id` = 2 LIMIT 1[0m
+  [1m[36mVendor Load (0.4ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.6ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (3.8ms)
+  Rendered vendors/index.html.erb within layouts/web (20.2ms)
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (2.3ms)
+  Rendered shared/web/_footer.html.erb (0.4ms)
+Completed 200 OK in 54ms (Views: 47.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/vendors/1" for 127.0.0.1 at 2017-11-12 22:20:29 +0800
+Processing by VendorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVendor Load (0.5ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` WHERE `vendors`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `vendors` SET `view_count` = 18, `updated_at` = '2017-11-12 22:20:29' WHERE `vendors`.`id` = 1[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering vendors/show.html.erb within layouts/web
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT `customers`.* FROM `customers` INNER JOIN `customers_vendors` ON `customers`.`id` = `customers_vendors`.`customer_id` WHERE `customers_vendors`.`vendor_id` = 1[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`vendor_id` = 1 ORDER BY `comments`.`id` DESC[0m
+  Rendered vendors/_add_comments.html.erb (6.5ms)
+  [1m[36mVendor Load (0.6ms)[0m  [1m[34mSELECT  `vendors`.* FROM `vendors` ORDER BY `vendors`.`view_count` DESC LIMIT 5[0m
+  [1m[36mCustomersVendor Load (0.4ms)[0m  [1m[34mselect customers.id,customers.name,count(customers_vendors.customer_id) as count_customer_ids from customers_vendors 
+       	left join customers 
+      	on customers.id = customers_vendors.customer_id
+      	group by customers_vendors.customer_id
+      	order by count_customer_ids desc
+      	limit 5
+      	[0m
+  Rendered shared/web/_right.html.erb (3.4ms)
+  Rendered vendors/show.html.erb within layouts/web (76.9ms)
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered shared/web/_top.html.erb (3.1ms)
+  Rendered shared/web/_footer.html.erb (0.4ms)
+Completed 200 OK in 116ms (Views: 98.2ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 22:20:50 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (0.6ms)
+  Rendered admin/trackings/_index.html.erb (2.4ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (4.0ms)
+  Rendered shared/admin/_top_bar.html.erb (1.4ms)
+  Rendered shared/admin/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 69ms (Views: 63.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/trackings" for 127.0.0.1 at 2017-11-12 22:20:52 +0800
+Processing by Admin::TrackingsController#index as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`id` = 1 ORDER BY `employees`.`id` ASC LIMIT 1[0m
+  Rendering admin/trackings/index.html.erb within layouts/application
+  Rendered admin/trackings/_uuid_list.html.erb (0.6ms)
+  Rendered admin/trackings/_index.html.erb (2.2ms)
+  Rendered admin/trackings/index.html.erb within layouts/application (3.6ms)
+  Rendered shared/admin/_top_bar.html.erb (3.5ms)
+  Rendered shared/admin/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 0.5ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)

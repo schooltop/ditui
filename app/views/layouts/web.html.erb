@@ -29,6 +29,25 @@
     <![endif]-->
   <%= stylesheet_link_tag 'web' %>
   <%= javascript_include_tag 'web' %>
+
+  <!-- Start of Insight Tag for ThinkyouPage -->
+    <script type="text/javascript" async>
+        var opxProtocol = (("https:" == document.location.protocol ) ? "https://" : "http://");
+        var opxRegion = "localhost:3000";
+        document.write(unescape("%3Cscript src='" + opxProtocol + opxRegion + "/opxLoader.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript" async>
+        var opxtitle = document.title ;
+        var opxurl = escape(document.URL) ;
+        var opxreferrer = escape(document.referrer) ;
+        var opxuserAgent = escape(navigator.userAgent) ;
+        var opxid = "<%= current_uer.id.to_i %>";
+        var opxParams = "opxtitle="+opxtitle+";"+"opxurl="+opxurl+";"+"opxreferrer="+opxreferrer+";"+"opxid="+opxid+";"+"opxcookie="+opxcookie+";"+"opxuserAgent="+opxuserAgent;
+        opxLoad(opxProtocol + opxRegion, opxParams);
+    </script>
+    <!-- End of Insight Tag  -->
+
 </head>
  
 <body id="blog-article-sidebar">

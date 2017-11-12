@@ -19,7 +19,7 @@ module PreReport
 end
 
 
-# 缓存汇总
+  # 缓存汇总
   def cache_sum(tag)
     if Rails.cache.read(tag).blank? 
         Rails.cache.write(tag, 1)
@@ -72,4 +72,7 @@ end
 
   # 定义成可配置
   TRACKING_TAG = {"customers"=>"客户","vendor/"=>"供应商"}
+
+  DOMAIN = Rails.env.production? ? 'www.ditui.com' : '192.168.0.229'                 
+
 

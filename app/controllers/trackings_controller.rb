@@ -1,6 +1,7 @@
 class TrackingsController < ApplicationController
   # js请求  
   def index
+    p "aa"*100
     tracking_hash = {}
     # 本机作为第三方的cookie
     tracking_hash[:opxPID] = cookies[:opxPID]
@@ -26,6 +27,7 @@ class TrackingsController < ApplicationController
     end
 
     # uuid添加进数组
+    p cookies[:opxPID]
     cache_array("uuids_list",cookies[:opxPID],"uniq")
 
     # 当前用户关联

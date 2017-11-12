@@ -29415,3 +29415,87 @@ Processing by Web::CenterController#index as HTML
 Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.3ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(7488876540239811570, 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddBdIdToVendors (20171112120849)
+  [1m[35m (44.9ms)[0m  [1m[35mALTER TABLE `vendors` ADD `db_id` int COMMENT 'bd'[0m
+  [1m[35m (40.7ms)[0m  [1m[35mALTER TABLE `vendors` ADD `dealer_id` int COMMENT '撮合'[0m
+  [1m[35m (37.0ms)[0m  [1m[35mALTER TABLE `vendors` ADD `cs_id` int COMMENT '客服'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171112120849')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(7488876540239811570)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `attachments`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'attachments'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `categories`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'categories'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `comments`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'comments'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customer_visits`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'customers'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `customers_vendors`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `employees`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'employees'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `employees_roles`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `gps_locations`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'gps_locations'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'roles'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `tags`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tags'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `vendors`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'vendors'[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.form_class= is deprecated and will be removed in 4.x. Use SimpleForm.default_form_class= instead (called from block in <top (required)> at /Users/lijiangfeng/work/ditui/config/initializers/simple_form_semantic.rb:64)
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(7488876540239811570, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddUserIdToCustomers (20171112123635)
+  [1m[35m (45.0ms)[0m  [1m[35mALTER TABLE `customers` ADD `user_id` int COMMENT '用户关联'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171112123635')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(7488876540239811570)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `attachments`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'attachments'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `categories`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'categories'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `comments`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'comments'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customer_visits`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'customers'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `customers_vendors`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `employees`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'employees'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `employees_roles`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `gps_locations`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'gps_locations'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'roles'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `tags`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tags'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `vendors`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'vendors'[0m

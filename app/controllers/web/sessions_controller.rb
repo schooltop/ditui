@@ -13,6 +13,8 @@ class Web::SessionsController < Devise::SessionsController
     sign_in(resource_name, resource)
     # resource.ensure_private_token!
     respond_to do |format|
+      cu = Customer.find_by(name:cookies[:opxPID])
+      cu.update(user_id:current_user.id) if cu
       #format.html { redirect_to after_sign_in_path_for(resource) }
       #current_employee.add_log("#{current_employee.email} Login At #{Time.now.format_date(:full)}",request.ip)
       format.html { redirect_to login_jump_url }

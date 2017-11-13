@@ -1,1 +1,54 @@
 hi <%= current_user.name %>
+
+
+
+  <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+  <!--列表标题-->
+    <div class="am-list-news-hd am-cf">
+       <!--带更多链接-->
+        <a href="##" class="">
+          <h2>相关访客记录</h2>
+            <span class="am-list-news-more am-fr">更多 &raquo;</span>
+        </a>
+    </div>
+
+  	<div class="am-list-news-bd">
+  	<ul class="am-list">
+
+       <% current_user.customers.each do |cu| %>
+           <li><a href="/customers/<%= cu.id%>"><%= cu.name %></a></li>
+          <% end %>
+  	</ul>
+  	</div>
+
+  </div>
+
+
+
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+  <!--列表标题-->
+    <div class="am-list-news-hd am-cf">
+       <!--带更多链接-->
+        <a href="##" class="">
+          <h2>相关浏览供应商</h2>
+            <span class="am-list-news-more am-fr">更多 &raquo;</span>
+        </a>
+    </div>
+
+  	<div class="am-list-news-bd">
+  	<ul class="am-list">
+
+       <% current_user.vendors.each do |v| %>
+	       <li><a href="/vendors/<%= v.id %>"><%= v.name %></a></li>
+        <% end %>
+  	</ul>
+  	</div>
+
+  </div>
+
+
+
+
+
+
+

@@ -1,6 +1,7 @@
 class Customer < ApplicationRecord
 	has_many :gps_locations
   belongs_to :user
+  has_many :customers_vendors
 	has_and_belongs_to_many :vendors, join_table: :customers_vendors
 
 	def self.like_customer(latitude,longitude)

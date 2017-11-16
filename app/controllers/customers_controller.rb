@@ -8,6 +8,7 @@ class CustomersController < ApplicationController
   def index
     @customers = Customer.like_customer(params[:latitude],params[:longitude])
     @vendors = Vendor.like_vendor(params[:latitude],params[:longitude])
+    @gps = GpsLocation.find(params[:gps_id].to_i)
   end
 
   # GET /vendors/1
@@ -33,15 +34,19 @@ class CustomersController < ApplicationController
   def create
     require 'exifr/jpeg'    
     @customer = Customer.find_or_create_by(name:params[:customer][:name])
+    if current_user.present?
+      @customer.user_id = current_user.id 
+      @customer.save!
+    end
     unless params[:draft_img].blank?
       attachment = Attachment.create(attachment_entity_type: "Customer",attachment_entity_id: @customer.id , path: params[:draft_img], created_by: 1 ) 
       path = "#{Rails.root}/public#{attachment.path.to_s}"
       exif = EXIFR::JPEG.new(path)
       @latitude = exif.gps&.latitude||39.9717219722
       @longitude = exif.gps&.longitude||116.4911780001
-      GpsLocation.create(customer_id:@customer.id,latitude:@latitude,longitude:@longitude)
+      gps = GpsLocation.create(customer_id:@customer.id,latitude:@latitude,longitude:@longitude,cover_img:attachment.id)
     end
-    redirect_to :action=>"index",latitude:@latitude,longitude:@longitude,id:@customer.id
+    redirect_to :action=>"index",latitude:@latitude,longitude:@longitude,id:@customer.id,gps_id:gps.id
   end
 
   # PATCH/PUT /vendors/1
@@ -55,7 +60,7 @@ class CustomersController < ApplicationController
           exif = EXIFR::JPEG.new(path)
           @latitude = exif.gps&.latitude||39.9717219722
           @longitude = exif.gps&.longitude||116.4911780001
-          GpsLocation.create(customer_id:@customer.id,latitude:@latitude,longitude:@longitude)
+          GpsLocation.create(customer_id:@customer.id,latitude:@latitude,longitude:@longitude,cover_img:attachment.id)
         end
         format.html { redirect_to @customer, notice: 'vendor was successfully updated.' }
         format.json { render :show, status: :ok, location: @customer }

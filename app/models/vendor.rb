@@ -1,7 +1,8 @@
 class Vendor < ApplicationRecord
   has_many :comments
+  has_many :customers_vendors
   has_and_belongs_to_many :customers, join_table: :customers_vendors
-
+ 
   def cover_img_path
   	self.cover_img ? Attachment.find(self.cover_img.to_i).path.url : "/assets/f10.jpg"
   end

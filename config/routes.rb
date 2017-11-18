@@ -33,7 +33,13 @@ Rails.application.routes.draw do
   end
 
   namespace :web do
-    resources :center
+    resources :center do
+      collection do
+        get :my_vendor
+        get :my_visit
+        get :my_search
+      end
+    end
   end
 
   resources :customers do

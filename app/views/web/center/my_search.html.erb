@@ -1,0 +1,107 @@
+<div class="client_backstage">
+        <div class="container">
+            <!-- 左侧菜单 -->
+            <%= render 'left' %>
+            <div class="client_backstage_main">
+                
+                <div class="ui bottom attached tab segment active" data-tab="all_orders">
+                   <div class="client_backstage_orders">
+                        <form action="" class="client_backstage_search">
+                            <dl>
+                                <dt>Search My Inquiries:</dt>
+                                <dd>
+                                    <input type="text" id="loginName" name="user[member_name]" placeholder="Please input CAS no. or product Name" class="input" style="width: 197px;">
+                                </dd>
+                                <dt>Time:</dt>
+                                <dd>
+                                    <div class="input_min">
+                                        <input type="date" id="loginName" name="user[member_name]" class="input" style="    width: 197px;">
+                                    </div>
+                                </dd>
+                                <input type="button" class="btn_seach" value="Search">
+                            </dl>
+                        </form>
+                        <% current_user.gps.each do |gps| %>                      
+                        <div class="state2">
+                            <div class="head">
+                                <div class="l ml15"> 
+                                    <span class="mr10">2017-09-18 06:10:45</span>
+                                    <span class="mr10">OD-BFTV-FQSZ-K9FL-375F</span>
+                                </div>
+                                <div class="rel l">
+                                    <i class="icon_marker"></i>
+                                </div>
+                                <span class="dib mr20 r">TT30</span>
+                                <div class="r expired mt10 mr10">
+                                    <div class="schedule" style='width: 70%'></div>
+                                    <div class="text">Payment due in 4 days</div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                 <table class="ui very basic table">
+                                <tbody>
+                                    <tr>
+                                        <td class='tc'><img class="img" src="../../images/test1.jpg" alt=""></td>
+                                        <td>
+                                            <p>CAS#:616-47-7</p>
+                                            <p>1-methyl-1H-imidazole;</p>
+                                        </td>
+                                        <td>
+                                            <p>10.0mg</p>
+                                            <p class='green'>$1,177.43</p>
+                                        </td>
+                                        <td>
+                                            <div class="rel">
+                                                <i class="icon_military"></i>Dispatched
+                                            </div>
+                                        </td>
+                                        <td rowspan="2" class='lborder tl'>
+                                            <p class="green mb10">Total: $1,177.43</p>
+                                            <p class="red mb5">Due:</p>
+                                            <p class="red fs18 mb20">$1,177.43</p>
+                                            <button class="pay_now">Pay Now</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class='tc'><img class="img" src="../../images/test1.jpg" alt=""></td>
+                                        <td>
+                                            <p>CAS#:616-47-7</p>
+                                            <p>1-methyl-1H-imidazole;</p>
+                                        </td>
+                                        <td>
+                                            <p>10.0mg</p>
+                                            <p class='green'>$1,177.43</p>
+                                        </td>
+                                        <td>
+                                            <div class="rel">
+                                                <i class="icon_military"></i>Dispatched
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="5">
+                                            <div class="download_quotation">
+                                                <i class="icon_download"></i>
+                                                <div class="ui dropdown">
+                                                  Download Quotation<i class="dropdown icon"></i>
+                                                  <div class="menu">
+                                                    <div class="item">Choice 1</div>
+                                                    <div class="disabled item">Disabled</div>
+                                                    <div class="item">Choice 3</div>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            </div>
+                        </div>
+                        <% end %>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>

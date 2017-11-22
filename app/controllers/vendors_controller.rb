@@ -1,11 +1,12 @@
 class VendorsController < ApplicationController
+  before_action :authenticate_user!, except: [:index,:show]
   before_action :set_vendor, only: [:show, :edit, :update, :destroy,:add_comments]
-  layout "vendor"
+  layout "web"
 
   # GET /vendors
   # GET /vendors.json
   def index
-    @vendors = Vendor.all
+    @vendors = Vendor.all.page(params[:page]).per(10)
   end
 
   def top_search
@@ -22,6 +23,24 @@ class VendorsController < ApplicationController
   # GET /vendors/1.json
   def show
     @vendor.update(view_count: @vendor.view_count.to_i + 1)
+
+
+    if params[:customer_id]
+      @customer = Customer.find(params[:customer_id])
+      cv = CustomersVendor.find_or_create_by(customer_id:params[:customer_id],vendor_id:@vendor.id,gps_location_id:params[:gps_id])
+      cv.update(view_count:cv.view_count.to_i + 1) 
+    end
+  end
+
+  # 显示gps信息
+  def show_gps
+    require 'exifr/jpeg'
+    @image = Attachment.find(params[:id])
+    path = "#{Rails.root}/public#{@image.path.to_s}"
+    exif = EXIFR::JPEG.new(path)
+    @latitude = exif.gps&.latitude||39.9717219722
+    @longitude = exif.gps&.longitude||116.4911780001
+    redirect_to "http://www.gpsspg.com/maps.htm?maps=3&s=#{@latitude},#{@longitude}"
   end
 
   # GET /vendors/new
@@ -95,6 +114,6 @@ class VendorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
-      params.require(:vendor).permit(:category_id,:title,:content,:cover_img)
+      params.require(:vendor).permit(:category_id,:title,:name,:content,:cover_img)
     end
 end

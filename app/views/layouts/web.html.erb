@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>拍拍地推</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/placeholders/4.0.1/placeholders.jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('input[type=text][placeholder], input[type=password][placeholder], textarea[placeholder]').placeholder();
+      })
+    </script>
+    <![endif]-->
+  <%= stylesheet_link_tag 'web' %>
+  <%= javascript_include_tag 'web' %>
+
+  <!-- Start of Insight Tag for ThinkyouPage -->
+    <script type="text/javascript" async>
+        var opxProtocol = (("https:" == document.location.protocol ) ? "https://" : "http://");
+        var opxRegion = "<%= DOMAIN %>";
+        document.write(unescape("%3Cscript src='" + opxProtocol + opxRegion + "/opxLoader.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript" async>
+        var opxtitle = document.title ;
+        var opxurl = escape(document.URL) ;
+        var opxreferrer = escape(document.referrer) ;
+        // var opxcookie = escape(document.cookie) ;
+        var opxuserAgent = escape(navigator.userAgent) ;
+        var opxid = "<%= cookies[:opxPID] %>";
+        var opxParams = "opxtitle="+opxtitle+";"+"opxurl="+opxurl+";"+"opxreferrer="+opxreferrer+";"+"opxid="+opxid+";"+"opxuserAgent="+opxuserAgent;
+        opxLoad(opxProtocol + opxRegion, opxParams);
+    </script>
+    <!-- End of Insight Tag  -->
+
+</head>
+ 
+<body id="blog-article-sidebar">
+    <!-- header start -->
+    <header class="am-g am-g-fixed blog-fixed blog-text-center blog-header">
+        <div class="am-u-sm-8 am-u-sm-centered" >
+          <a href="/"><%= image_tag "/assets/logo.png" ,:width=>"200", :height=> "44"%></a>
+          <h2 class="am-hide-sm-only">Welcome to visit paipai</h2>
+        </div>
+    </header>
+    <!-- header end -->
+    <hr>
+    <%= render '/shared/web/top' %>
+    <%= yield %>
+    <%= render '/shared/web/footer' %>
+    <%= yield :scripts %>
+</body>
+</html>

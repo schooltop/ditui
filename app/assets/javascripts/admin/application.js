@@ -12,7 +12,6 @@
 //= require_self
 
 $.fn.dropdown.settings.placeholder = false;
-$.fn.search.settings.maxResults = 15;
 $.fn.calendar.settings.ampm = false;
 $.fn.calendar.settings.text.days = ['日','一','二','三','四','五','六'];
 $.fn.calendar.settings.text.months = ['一','二','三','四','五','六','七','八','九','十','十一','十二'];
@@ -52,26 +51,6 @@ $.fn.calendar.settings.formatter.time = function (date, settings, forCalendar) {
   return '' + hour + ':'  + minute + ':00' + ampm;
 };
 
-$.fn.form.settings.rules.number_range = function(value, range) {
-  var intRegExp = $.fn.form.settings.regExp.number;
-  var min, max, parts;
-  if( !range || ['', '..'].indexOf(range) !== -1) {
-    // do nothing
-  } else if(range.indexOf('..') == -1) {
-    if(intRegExp.test(range)) {
-      min = max = range - 0;
-    };
-  } else {
-    parts = range.split('..', 2);
-    if(intRegExp.test(parts[0])) {
-      min = parts[0] - 0;
-    };
-    if(intRegExp.test(parts[1])) {
-      max = parts[1] - 0;
-    };
-  };
-  return (intRegExp.test(value) && (min === undefined || value >= min) && (max === undefined || value <= max));
-};
 
 var ajaxBar = function(obj,options){
   options['ov'] = obj.value;
@@ -106,7 +85,6 @@ $(function(){
       on: 'click'
     })
   });
-  $('.ui.dropdown.item').dropdown();
 
   //显示隐藏菜单
   $('#showToggle').hide();

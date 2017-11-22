@@ -1,0 +1,19 @@
+<%#= simple_form_for @category, url: admin_categories_path , method: :post, remote: true do |f| %>
+<%= simple_form_for @user, url: admin_users_path , method: :post, remote: true do |f| %>
+  
+    <div id="form_message" class="two fields red" style="margin-left: 15px;display:none;" ></div>
+
+    <div class="two fields">
+      <%= f.input :name %>
+      <%= f.input :password %><span id="show_name"></span>
+      <%= f.input :email %>
+    </div>
+    
+    <div class="field">
+      <div class="actions ">
+        <div class="ui button primary" id="commition" >提交</div>
+        <div class="ui cancel button">取消</div>
+      </div>
+    </div>
+
+<% end %>

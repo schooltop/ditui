@@ -11,6 +11,14 @@
           <i class="left bullseye icon"></i>
           <span>员工管理</span>
         <% end %>
+        <%= link_to admin_users_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>用户管理</span>
+        <% end %>
+        <%= link_to new_customer_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>找店</span>
+        <% end %>
       </div>
     </li>
   </ul>

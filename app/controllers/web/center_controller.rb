@@ -6,7 +6,7 @@ class Web::CenterController < Web::BaseController
 	end
 
 	def my_vendor
-
+       
 	end
 
 	def my_visite

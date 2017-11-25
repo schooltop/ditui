@@ -96,7 +96,7 @@ class CustomersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_customer
-      @customer = Customer.find(params[:id])
+      @customer = params[:id] ? Customer.find(params[:id]) : Customer.new(name:cookies[:opxPID])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

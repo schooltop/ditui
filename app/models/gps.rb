@@ -1,7 +1,9 @@
 class Gps
 
   def self.like_vendor(latitude,longitude)
-  	Vendor.find_by_sql("select *, abs(latitude-1000) as min_latitude , abs(longitude-1000) as min_longitude  
+    latitude = latitude.to_i
+    longitude = longitude.to_i
+  	Vendor.find_by_sql("select *, abs(latitude-#{latitude}) as min_latitude , abs(longitude-#{longitude}) as min_longitude  
   		from vendors  
   		order by min_latitude, min_longitude 
   		limit 10 ")

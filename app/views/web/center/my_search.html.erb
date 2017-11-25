@@ -21,7 +21,7 @@
                                 <input type="button" class="btn_seach" value="Search">
                             </dl>
                         </form>
-                        <% current_user.gps.each do |gps| %>                      
+                        <% current_user.gps.each do |gps| %>                  
                         <div class="state2">
                             <div class="head">
                                 <div class="l ml15"> 
@@ -41,7 +41,7 @@
                                  <table class="ui very basic table">
                                 <tbody>
                                     <tr>
-                                        <td class='tc'><img class="img" src="../../images/test1.jpg" alt=""></td>
+                                        <td class='tc'><img class="img" src="<%= gps.cover_img_path %>" alt=""></td>
                                         <td>
                                             <p>CAS#:616-47-7</p>
                                             <p>1-methyl-1H-imidazole;</p>
@@ -49,53 +49,14 @@
                                         <td>
                                             <p>10.0mg</p>
                                             <p class='green'>$1,177.43</p>
-                                        </td>
-                                        <td>
-                                            <div class="rel">
-                                                <i class="icon_military"></i>Dispatched
-                                            </div>
                                         </td>
                                         <td rowspan="2" class='lborder tl'>
-                                            <p class="green mb10">Total: $1,177.43</p>
-                                            <p class="red mb5">Due:</p>
-                                            <p class="red fs18 mb20">$1,177.43</p>
-                                            <button class="pay_now">Pay Now</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class='tc'><img class="img" src="../../images/test1.jpg" alt=""></td>
-                                        <td>
-                                            <p>CAS#:616-47-7</p>
-                                            <p>1-methyl-1H-imidazole;</p>
-                                        </td>
-                                        <td>
-                                            <p>10.0mg</p>
-                                            <p class='green'>$1,177.43</p>
-                                        </td>
-                                        <td>
-                                            <div class="rel">
-                                                <i class="icon_military"></i>Dispatched
-                                            </div>
+                                            <p class="green mb10">经度: <%= gps.latitude %></p>
+                                            <p class="red mb10">纬度: <%= gps.longitude %></p>
+                                            <a href="/customers?latitude=<%= gps.latitude %>&longitude=<%= gps.longitude %>&gps_id=<%=gps.id%>" target="_brank"><button class="pay_now">查看</button></a>
                                         </td>
                                     </tr>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th colspan="5">
-                                            <div class="download_quotation">
-                                                <i class="icon_download"></i>
-                                                <div class="ui dropdown">
-                                                  Download Quotation<i class="dropdown icon"></i>
-                                                  <div class="menu">
-                                                    <div class="item">Choice 1</div>
-                                                    <div class="disabled item">Disabled</div>
-                                                    <div class="item">Choice 3</div>
-                                                  </div>
-                                                </div>
-                                            </div>
-                                        </th>
-                                    </tr>
-                                </tfoot>
                             </table>
                             </div>
                         </div>

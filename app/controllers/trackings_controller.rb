@@ -1,7 +1,6 @@
 class TrackingsController < ApplicationController
   # js请求  
   def index
-    p "aa"*100
     tracking_hash = {}
     # 本机作为第三方的cookie
     tracking_hash[:opxPID] = cookies[:opxPID]

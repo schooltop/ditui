@@ -1,21 +1,21 @@
-
+<div style="margin-left: 40%;">
 <br/><br/>
 <%= form_for @customer, url: customers_path, method: "post", :html => { :multipart => true } do |f| %>
   <div class="field">
     <%= file_field_tag "draft_img", id: 'draft_img' %>
   </div>
 
-  <div class="control-group optional form-group field ui form" style="margin-top: 10px" >
+ <!--  <div class="control-group optional form-group field ui form" style="margin-top: 10px" >
     <%= f.label :name, 'Name', class: 'password optional control-label' %>
     <div class="controls">
       <%= f.text_field :name, class: 'form-control input-sm', style: 'width: 280px;' %>
     </div>
-  </div>
+  </div> -->
   
   <br/><br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "拍拍"%>
   </div>
 <% end %>
-
+</div>
 

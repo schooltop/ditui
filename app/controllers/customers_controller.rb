@@ -33,7 +33,7 @@ class CustomersController < ApplicationController
   # POST /vendors.json
   def create
     require 'exifr/jpeg'    
-    @customer = Customer.find_or_create_by(name:params[:customer][:name])
+    @customer = Customer.find_or_create_by(name:cookies[:opxPID])
     if current_user.present?
       @customer.user_id = current_user.id 
       @customer.save!

@@ -24,11 +24,10 @@ class VendorsController < ApplicationController
   def show
     @vendor.update(view_count: @vendor.view_count.to_i + 1)
 
-
     if params[:customer_id].present?
       @customer = Customer.find(params[:customer_id])
-      cv = CustomersVendor.find_or_create_by(customer_id:params[:customer_id],vendor_id:@vendor.id,gps_location_id:params[:gps_id])
-      cv.update(view_count:cv.view_count.to_i + 1) 
+      cv = CustomersVendor.find_or_create_by(customer_id:params[:customer_id],vendor_id:@vendor.id)
+      cv.update(view_count:cv.view_count.to_i + 1)
     end
   end
 
@@ -61,6 +60,12 @@ class VendorsController < ApplicationController
         unless params[:draft_img].blank?
           attachment = Attachment.create(attachment_entity_type: "vendor",attachment_entity_id: @vendor.id , path: params[:draft_img], created_by: 1 ) 
           @vendor.cover_img = attachment.id
+          path = "#{Rails.root}/public#{attachment.path.to_s}"
+          exif = EXIFR::JPEG.new(path)
+          @latitude = exif.gps&.latitude||39.9717219722
+          @longitude = exif.gps&.longitude||116.4911780001
+          @vendor.latitude = @latitude
+          @vendor.longitude = @longitude
           @vendor.save
         end
         format.html { redirect_to @vendor, notice: 'vendor was successfully created.' }
@@ -80,6 +85,12 @@ class VendorsController < ApplicationController
         unless params[:draft_img].blank?
           attachment = Attachment.create(attachment_entity_type: "vendor",attachment_entity_id: @vendor.id , path: params[:draft_img], created_by: 1 ) 
           @vendor.cover_img = attachment.id
+          path = "#{Rails.root}/public#{attachment.path.to_s}"
+          exif = EXIFR::JPEG.new(path)
+          @latitude = exif.gps&.latitude||39.9717219722
+          @longitude = exif.gps&.longitude||116.4911780001
+          @vendor.latitude = @latitude
+          @vendor.longitude = @longitude
           @vendor.save
         end
         format.html { redirect_to @vendor, notice: 'vendor was successfully updated.' }

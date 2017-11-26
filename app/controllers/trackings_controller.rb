@@ -30,7 +30,7 @@ class TrackingsController < ApplicationController
 
     # 当前用户关联
     opxid = Customer.find_by(name:cookies[:opxPID])
-    cache_value(cookies[:opxPID],opxid.to_i) 
+    cache_value(cookies[:opxPID],opxid.id.to_i) 
 
     # 根据url来触发响应
     # 根据

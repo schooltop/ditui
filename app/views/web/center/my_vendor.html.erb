@@ -21,7 +21,7 @@
                                 <input type="button" class="btn_seach" value="Search">
                             </dl>
                         </form>
-                        <% current_user.customers_vendors.each do |cv| %>
+                        <% current_user.customers_vendors.sort.uniq.each do |cv| %>
                         <div class="state2">
                             <div class="head">
                                 <div class="l ml15"> 

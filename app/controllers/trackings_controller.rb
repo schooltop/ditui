@@ -26,7 +26,6 @@ class TrackingsController < ApplicationController
     end
 
     # uuid添加进数组
-    p cookies[:opxPID]
     cache_array("uuids_list",cookies[:opxPID],"uniq")
 
     # 当前用户关联

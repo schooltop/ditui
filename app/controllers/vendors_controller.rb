@@ -25,7 +25,7 @@ class VendorsController < ApplicationController
     @vendor.update(view_count: @vendor.view_count.to_i + 1)
 
 
-    if params[:customer_id]
+    if params[:customer_id].present?
       @customer = Customer.find(params[:customer_id])
       cv = CustomersVendor.find_or_create_by(customer_id:params[:customer_id],vendor_id:@vendor.id,gps_location_id:params[:gps_id])
       cv.update(view_count:cv.view_count.to_i + 1) 

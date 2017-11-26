@@ -17,7 +17,7 @@
             <%= @vendor.content.html_safe %>
         </div>
     
-        <div class="blog-sidebar-widget blog-bor" id="blog_comments_list" >
+        <div class="blog-sidebar-widget blog-bor" id="blog_visit_list" >
           <h3 class="blog-comment">到访用户</h3>
           <% @vendor.customers.each do |cs| %>
             <a href="/customers/<%= cs.id %>" class="vendor-color"><%= cs.name %></a> 

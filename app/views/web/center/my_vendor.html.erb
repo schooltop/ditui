@@ -41,15 +41,15 @@
                                  <table class="ui very basic table">
                                 <tbody>
                                     <tr>
-                                        <td class='tc'>
+                                        <td class='tc' width="25%">
                                             <a href="/vendors/<%= cv.vendor_id %>" target="_brank">
-                                             <img class="img" src="<%= cv.vendor.cover_img_path %>" alt="">
+                                              <img class="img" src="<%= cv.vendor.cover_img_path %>" alt="">
                                             </a>
                                         </td>
-                                        <td>
+                                        <td width="50%">
                                             <p class='green'><%= raw cv.vendor.content %></p>
                                         </td>
-                                        <td rowspan="2" class='lborder tl'>
+                                        <td class='lborder tl' width="25%">
                                             <p class="green mb10">经度: <%= GpsLocation.find(cv.gps_location_id.to_i).latitude %></p>
                                             <p class="red mb10">纬度: <%= GpsLocation.find(cv.gps_location_id.to_i).longitude %></p>
                                             <a href="/vendors/<%= cv.vendor_id %>" target="_brank"><button class="pay_now">查看</button></a>

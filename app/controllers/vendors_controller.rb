@@ -2,6 +2,7 @@ class VendorsController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]
   before_action :set_vendor, only: [:show, :edit, :update, :destroy,:add_comments]
   layout "web"
+  require 'exifr/jpeg'
 
   # GET /vendors
   # GET /vendors.json
@@ -33,7 +34,6 @@ class VendorsController < ApplicationController
 
   # 显示gps信息
   def show_gps
-    require 'exifr/jpeg'
     @image = Attachment.find(params[:id])
     path = "#{Rails.root}/public#{@image.path.to_s}"
     exif = EXIFR::JPEG.new(path)

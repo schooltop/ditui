@@ -41,9 +41,13 @@
                                  <table class="ui very basic table">
                                 <tbody>
                                     <tr>
-                                        <td class='tc'><img class="img" src="<%= gps.cover_img_path %>" alt=""></td>
+                                        <td class='tc'>
+                                          <a href="/vendors/show_gps?id=<%=gps.cover_img.to_i%>" target="_blank">
+                                            <img class="img" src="<%= gps.cover_img_path %>" alt="">
+                                          </a>  
+                                        </td>
                                         <td>
-                                            <p>CAS#:616-47-7</p>
+                                            <p><%= gps.created_at %></p>
                                             <p>1-methyl-1H-imidazole;</p>
                                         </td>
                                         <td>

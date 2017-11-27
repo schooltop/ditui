@@ -50,7 +50,7 @@
                           <a href="/vendors/<%= cv.vendor_id %>">
                           <%= image_tag cv.vendor.cover_img_path ,:class=>"blog-entry-img blog-article-margin",:width=>"200px",:higth=>"80px" %> <br/>
                           <%= cv.vendor.name %></a>
-                          <%=  GpsLocation.find(cv.gps_location_id.to_i).latitude_longitude%>
+                          <%=  GpsLocation.find(cv.gps_location_id.to_i).latitude_longitude if cv.gps_location_id %>
                       </li>
                     <% end %>
                   </ul>

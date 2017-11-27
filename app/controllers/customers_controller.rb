@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
   before_action :authenticate_user!, except: [:logout,:new,:create,:index]
   before_action :set_customer, only: [:index,:show, :edit, :update, :destroy,:add_comments]
   layout "web"
+  require 'exifr/jpeg'
 
   # GET /vendors
   # GET /vendors.json
@@ -32,7 +33,6 @@ class CustomersController < ApplicationController
   # POST /vendors
   # POST /vendors.json
   def create
-    require 'exifr/jpeg'    
     @customer = Customer.find_or_create_by(name:cookies[:opxPID])
     if current_user.present?
       @customer.user_id = current_user.id 

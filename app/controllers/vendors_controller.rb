@@ -7,11 +7,11 @@ class VendorsController < ApplicationController
   # GET /vendors
   # GET /vendors.json
   def index
-    @vendors = Vendor.all.page(params[:page]).per(10)
+    @vendors = Vendor.all.page(params[:page]).per(5)
   end
 
   def top_search
-    @vendors = Vendor.where("title like '#{params[:title]}%' ").page(params[:page]).per(9)
+    @vendors = Vendor.where("title like '#{params[:title]}%' ").page(params[:page]).per(5)
     render "index"
   end
 

@@ -1,18 +1,18 @@
 
 <br/><br/>
 <%= form_for @vendor, url: url, method: meth, :html => { :multipart => true } do |f| %>
-  <div class="field">
+  <div class="field" style="margin-left: 20px;">
     <%= file_field_tag "draft_img", id: 'draft_img' %>
   </div>
 
-  <div class="control-group optional form-group field" style="margin-top: 10px" >
+  <div class="control-group optional form-group field" style="margin: 20px;" >
     <%= f.label :category, 'Category', class: 'password optional control-label' %>
     <div class="controls">
       <%= f.select :category_id, options_for_select(Category.all.collect { |p| [ p.name, p.id ] }, @vendor.category_id), {include_blank: true}, {class: 'form-control input-sm ui dropdown', style: 'width: 280px;' } %>
     </div>
   </div>
 
-  <div class="control-group optional form-group field ui form" style="margin-top: 10px" >
+  <div class="control-group optional form-group field ui form" style="margin: 20px;" >
     <%= f.label :title, 'Title', class: 'password optional control-label' %>
     <div class="controls">
       <%= f.text_field :title, class: 'form-control input-sm', style: 'width: 280px;' %>
@@ -23,14 +23,14 @@
     </div>
   </div>
 
-  <div class="control-group optional form-group field" style="margin-top: 10px" >
+  <div class="control-group optional form-group field" style="margin: 20px;" >
     <%= f.label :content, 'Content', class: 'password optional control-label' %>
     <div class="controls">
-      <%= text_area_tag 'vendor[content]', @vendor.content, { rows: 100, class: 'form-control input-sm'  } %>
+      <%= text_area_tag 'vendor[content]', @vendor.content ,:style=>"width:50%;height:300px;", class: 'form-control input-sm'  %>
     </div>
   </div>
   
-  <div class="actions">
+  <div class="actions" style="margin-left: 20px;color:#2185D0 ">
     <%= f.submit %>
   </div>
 <% end %>

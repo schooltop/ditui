@@ -1,0 +1,5 @@
+<% converses = "" %>
+<%@converses.each do |converse|%>
+ converses += "<p><%=converse.from.name%>:<%=converse.converse%></p>"
+<% end %>
+$("#converse_<%=to_id%>").html(converses)

@@ -17,10 +17,24 @@ class Web::CenterController < Web::BaseController
 		@my_from = @my_from.select{|_|_.created_at >= params[:time] } if params[:time].present? 
 	end
 
+	def visits_converse_create
+      @visits_converse = VisitsConverse.new(visits_converse_params)
+      @visits_converse.save
+      @to_id = visits_converse_params[:to_id].to_i
+      @converses = VisitsConverse.where(" (from_id = #{current_user.id} and to_id = #{@to_id} ) or (to_id = #{current_user.id} and from_id = #{@to_id} ) ")
+      redirect_to :action=>"my_visit"
+    end
+
 	def my_search
         @my_search = current_user.gps
 		@my_search = @my_search.select{|_|_.customer.name == params[:name] } if params[:name].present?
 		@my_search = @my_search.select{|_|_.created_at >= params[:time] } if params[:time].present? 
 	end
+
+	private
+
+	def visits_converse_params
+      params.require(:visits_converse).permit(:from_id,:to_id,:converse)
+    end
 
 end

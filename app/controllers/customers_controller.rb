@@ -11,6 +11,11 @@ class CustomersController < ApplicationController
     @vendors = Vendor.like_vendor(params[:latitude],params[:longitude])
     @gps = GpsLocation.find(params[:gps_id].to_i)
   end
+ 
+  # gps明细表
+  def detail
+   render :layout=>false
+  end
 
   # GET /vendors/1
   # GET /vendors/1.json

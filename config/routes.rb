@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     collection do
       post :upload_image
       get :logout
+      get :detail
     end
   end
   

@@ -10,6 +10,8 @@ class CreateTables < ActiveRecord::Migration[5.0]
     create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "员工表" do |t|
         t.string   "email",                            default: "",  null: false, comment: "email"
         t.string   "encrypted_password",               default: "",  null: false, comment: "密码"
+        t.string   "reset_password_token"
+        t.datetime "reset_password_sent_at"
         t.integer  "parent_id",                        default: 0,                comment: "上级ID"
         t.datetime "created_at",                                     null: false, comment: "创建日期"
         t.datetime "updated_at",                                     null: false, comment: "修改日期"
@@ -54,5 +56,7 @@ CreateTables.new.change
 
 # email to me!
 em = Employee.create(email:"107422244@qq.com",password:"11111111",name:"jamst")
+
+Category.create([{name:"教育"},{parent_id:"1",name:"美术"},{parent_id:"1",name:"钢琴"}])
 
 

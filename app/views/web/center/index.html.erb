@@ -75,7 +75,7 @@
                         <%= image_tag gps.cover_img_path ,:class=>"blog-entry-img blog-article-margin",:width=>"200px",:higth=>"80px" %> <br/>
                         经纬度：<%= gps.latitude_longitude %>
                       </li>
-                    <% end %>
+                    <% end if current_user.gps %>
                 </ul>
               </div>
               </div>

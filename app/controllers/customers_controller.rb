@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
   before_action :authenticate_user!, except: [:logout,:new,:create,:index]
   before_action :set_customer, only: [:index,:show, :edit, :update, :destroy,:add_comments]
   layout "web"
+  require 'exifr/jpeg'
 
   # GET /vendors
   # GET /vendors.json
@@ -9,6 +10,11 @@ class CustomersController < ApplicationController
     @customers = Customer.like_customer(params[:latitude],params[:longitude])
     @vendors = Vendor.like_vendor(params[:latitude],params[:longitude])
     @gps = GpsLocation.find(params[:gps_id].to_i)
+  end
+ 
+  # gps明细表
+  def detail
+   render :layout=>false
   end
 
   # GET /vendors/1
@@ -32,8 +38,7 @@ class CustomersController < ApplicationController
   # POST /vendors
   # POST /vendors.json
   def create
-    require 'exifr/jpeg'    
-    @customer = Customer.find_or_create_by(name:params[:customer][:name])
+    @customer = Customer.find_or_create_by(name:cookies[:opxPID])
     if current_user.present?
       @customer.user_id = current_user.id 
       @customer.save!
@@ -96,7 +101,7 @@ class CustomersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_customer
-      @customer = Customer.find(params[:id])
+      @customer = params[:id].present? ? Customer.find(params[:id]) : Customer.find_or_create_by(name:cookies[:opxPID])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

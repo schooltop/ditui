@@ -9,8 +9,6 @@ class ApplicationController < ActionController::Base
 	      opxpid = "#{t_format}#{randid}"
 	      cookies[:opxPID] = opxpid
 	    end
-	    p cookies[:opxPID]
-	    p "00"*100
 	end
 
 end

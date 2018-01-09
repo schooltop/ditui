@@ -38,6 +38,7 @@ Rails.application.routes.draw do
         get :my_vendor
         get :my_visit
         get :my_search
+        get :visits_converse_create 
       end
     end
   end
@@ -46,6 +47,7 @@ Rails.application.routes.draw do
     collection do
       post :upload_image
       get :logout
+      get :detail
     end
   end
   

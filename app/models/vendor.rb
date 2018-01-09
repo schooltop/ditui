@@ -12,9 +12,9 @@ class Vendor < ApplicationRecord
   end
 
   def self.like_vendor(latitude,longitude)
-  	Vendor.find_by_sql("select *, abs(latitude-#{latitude}) as min_latitude , abs(longitude-#{longitude}) as min_longitude  
+  	Vendor.find_by_sql("select abs(latitude-#{latitude}) as min_latitude , abs(longitude-#{longitude}) as min_longitude , vendors.* 
   		from vendors  
-  		order by min_latitude, min_longitude 
+  		order by min_latitude , min_longitude ,created_at desc
   		limit 10 ")
   end
 

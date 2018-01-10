@@ -16,6 +16,13 @@ GIT
     kaminari-core (1.1.0)
 
 GIT
+  remote: https://github.com/jamst/default_where.git
+  revision: 075b1222746e5f6b9ec8819caa2b66fd0d75a30e
+  specs:
+    default_where (2.0.0)
+      activerecord (>= 4.0.0)
+
+GIT
   remote: https://github.com/plataformatec/devise.git
   revision: 3323197d68ed726f80f90361ce92151df782210a
   specs:
@@ -25,13 +32,6 @@ GIT
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
-
-GIT
-  remote: https://github.com/qinmingyuan/default_where.git
-  revision: cb696bbe886b9705f60db48c513e90e74d73209f
-  specs:
-    default_where (2.1.0)
-      activerecord (>= 4.0.0)
 
 GEM
   remote: https://rubygems.org/

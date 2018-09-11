@@ -1,0 +1,67 @@
+<div class="client_backstage">
+        <div class="container">
+            <!-- 左侧菜单 -->
+            <%= render 'left' %>
+            <div class="client_backstage_main">
+                
+                <div class="ui bottom attached tab segment active" data-tab="all_orders">
+                   <div class="client_backstage_orders">
+                        <form action="/web/center/my_vendor" class="client_backstage_search">
+                            <dl>
+                                <dt>Search My vendor:</dt>
+                                <dd>
+                                    <input type="text" id="loginName" name="name" placeholder="Please input vendor Name" class="input" style="width: 197px;">
+                                </dd>
+                                <dt>Time:</dt>
+                                <dd>
+                                    <div class="input_min">
+                                        <input type="date" id="time" name="time" class="input" style="width: 197px;">
+                                    </div>
+                                </dd>
+                                <input type="submit" class="btn_seach" value="Search">
+                            </dl>
+                        </form>
+                        <% @customers_vendors.each do |cv| %>
+                        <div class="state2">
+                            <div class="head">
+                                <div class="l ml15"> 
+                                   <span class="mr10"><%= cv.vendor.name %></span>
+                                   <span class="mr10"><%= cv.created_at %></span>
+                                </div>
+                                <div class="rel l">
+                                    <i class="icon_marker"></i>
+                                </div>
+                                <span class="dib mr20 r">Visit</span>
+                                <div class="r expired mt10 mr10">
+                                    <div class="schedule" style='width: <%= cv.view_count.to_i*100/cv.vendor.view_count %>%'></div>
+                                    <div class="text">All Visit <%= cv.vendor.view_count %> times</div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                 <table class="ui very basic table">
+                                <tbody>
+                                    <tr>
+                                        <td class='tc' width="25%">
+                                            <a href="/vendors/<%= cv.vendor_id %>" target="_brank">
+                                              <img class="img" src="<%= cv.vendor.cover_img_path %>" alt="">
+                                            </a>
+                                        </td>
+                                        <td width="50%">
+                                            <p class='green'><%= raw cv.vendor.content %></p>
+                                        </td>
+                                        <td class='lborder tl' width="25%">
+                                            <p class="green mb10">经度: <%= GpsLocation.find(cv.gps_location_id.to_i).latitude if cv.gps_location_id %></p>
+                                            <p class="red mb10">纬度: <%= GpsLocation.find(cv.gps_location_id.to_i).longitude if cv.gps_location_id %></p>
+                                            <a href="/vendors/<%= cv.vendor_id %>" target="_brank"><button class="pay_now">查看</button></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        <% end %>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>

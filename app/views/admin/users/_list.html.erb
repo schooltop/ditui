@@ -1,0 +1,16 @@
+<tr id="user_<%= user.id %>">
+  <td class="center aligned">
+    <span><%= user.id%></span>
+  </td>
+  <td class="center aligned">
+    <%=  user.email%>
+  </td>
+  <td class="center aligned">
+    <%= user.name %>
+  </td>
+  <td class="center aligned">
+    <%= link_to edit_admin_user_path(user.id) , remote: true, class: 'ui icon primary button', 'data-content' => '修改user', 'data-variation' => 'inverted'  do%>
+      <i class="edit icon"></i>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,67 @@
+<div class="client_backstage">
+        <div class="container">
+            <!-- 左侧菜单 -->
+            <%= render 'left' %>
+            <div class="client_backstage_main">
+                
+                <div class="ui bottom attached tab segment active" data-tab="all_orders">
+                   <div class="client_backstage_orders">
+                        <form action="/web/center/my_visit" class="client_backstage_search">
+                            <dl>
+                                <dt>Search My visit:</dt>
+                                <dd>
+                                    <input type="text" id="loginName" name="name" placeholder="Please input vendor Name" class="input" style="width: 197px;">
+                                </dd>
+                                <dt>Time:</dt>
+                                <dd>
+                                    <div class="input_min">
+                                        <input type="date" id="time" name="time" class="input" style="width: 197px;">
+                                    </div>
+                                </dd>
+                                <input type="submit" class="btn_seach" value="Search">
+                            </dl>
+                        </form>
+                        <% @my_from.each do |cu| %>
+                        <div class="state2">
+                            <div class="head">
+                                <div class="l ml15"> 
+                                    <span class="mr10">2017-09-18 06:10:45</span>
+                                    <span class="mr10">名称：<%= cu.name %><%= cu.id %><%= current_user.id %></span>
+                                </div>
+                                <div class="rel l">
+                                    <i class="icon_marker"></i>
+                                </div>
+                                <span class="dib mr20 r"><a href="/customers/<%= cu.id%>" target="_brank">
+                                            <button class="pay_now">查看</button></a></span>
+                            </div>
+                            <div class="main">
+                                 <table class="ui very basic table">
+                                <tbody>
+                                    <tr>
+                                        
+                                        <td width="50%" id="converse_<%=cu.id%>">
+                                            <% VisitsConverse.where(" (from_id = #{current_user.id} and to_id = #{cu.id} ) or (to_id = #{current_user.id} and from_id = #{cu.id} ) ").each do |converse| %>
+                                               <p><%=converse.from.name%>:<%=converse.converse%></p>
+                                            <% end %>
+                                        </td>
+                                        
+                                        <td rowspan="2" class='lborder tl'>
+                                            <%= simple_form_for VisitsConverse.new, url: "/web/center/visits_converse_create" , method: :get, remote: true do |f| %>
+                                            <%=f.hidden_field 'to_id', value: cu.id  %>
+                                            <%=f.hidden_field 'from_id', value: current_user.id %>
+                                            <p><%=text_area_tag 'visits_converse[converse]', nil ,:style=>"width:100%;height:300px;", class: 'form-control input-sm'  %></p>
+                                            <button class="pay_now">确认</button>
+                                            <% end %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        <% end %>
+
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>

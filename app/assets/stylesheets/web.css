@@ -1,0 +1,6 @@
+/*
+*= require_tree ./web
+*= require web/app.css
+*= require web/amazeui.min.css
+*= require_self
+*/

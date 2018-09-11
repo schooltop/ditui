@@ -1,0 +1,58 @@
+<div class="client_backstage">
+        <div class="container">
+            <!-- 左侧菜单 -->
+            <%= render 'left' %>
+            <div class="client_backstage_main">
+                
+                <div class="ui bottom attached tab segment active" data-tab="all_orders">
+                   <div class="client_backstage_orders">
+                        <form action="/web/center/my_search" class="client_backstage_search">
+                            <dl>
+                                <dt>Search My paipai:</dt>
+                                <dd>
+                                    <input type="text" id="loginName" name="name" placeholder="Please input vendor Name" class="input" style="width: 197px;">
+                                </dd>
+                                <dt>Time:</dt>
+                                <dd>
+                                    <div class="input_min">
+                                        <input type="date" id="time" name="time" class="input" style="width: 197px;">
+                                    </div>
+                                </dd>
+                                <input type="submit" class="btn_seach" value="Search">
+                            </dl>
+                        </form>
+                        <% @my_search.each do |gps| %>                  
+                        <div class="state2">
+                            <div class="head">
+                                <div class="l ml15"> 
+                                    <span class="mr10"><%= gps.created_at %></span>
+                                </div>
+                                <span class="dib mr20 r">ID:<%= gps.customer&.name %></span>
+                            </div>
+                            <div class="main">
+                                 <table class="ui very basic table">
+                                <tbody>
+                                    <tr>
+                                        <td class='tc' width="30%">
+                                          <a href="/vendors/show_gps?id=<%=gps.cover_img.to_i%>" target="_blank">
+                                            <img class="img" src="<%= gps.cover_img_path %>" alt="">
+                                          </a>  
+                                        </td>
+                                        <td width="40%">
+                                            <p class="green mb10">经度: <%= gps.latitude %></p>
+                                            <p class="red mb10">纬度: <%= gps.longitude %></p>
+                                        </td>
+                                        <td rowspan="2" class='lborder tl'>
+                                            <a href="/customers?latitude=<%= gps.latitude %>&longitude=<%= gps.longitude %>&gps_id=<%=gps.id%>" target="_brank"><button class="pay_now">查看</button></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        <% end if @my_search %>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>

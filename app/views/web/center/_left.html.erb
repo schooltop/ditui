@@ -1,0 +1,23 @@
+<div class="client_backstage_menu">
+    <div class="user_info">
+        <p class="txt"><i class="icon_user2"></i><%= current_user.name %></p>
+        <p class="txt"><i class="icon_phone"></i>15827513512</p>
+        <p class="txt"><i class="icon_company"></i><%= cookies[:opxPID] %></p>
+    </div>
+    <div class="credit">
+        <p class="txt">访问商家数量: <%= current_user.customers_vendors.size %></p>
+        <div class="txt fix">
+            <span class="dib l">拍拍次数:</span>
+            <div class="progress l" style='width: 150px;'>
+                <div class="bar" style="transition-duration: 300ms; width: <%= current_user.customers_vendors.size.to_i*100/current_user.gps_size %>%;"></div>
+            </div>
+            <span class="dib l" style='margin-left: 10px;color: #e8e8e8;'><%= current_user.gps_size %> </span>
+        </div>
+    </div>
+    <ul>
+        <li class="first <%='first_active' if action_name=='index'%>"><a href="/web/center"><i></i>我的统计</a></li>
+        <li class="first <%='first_active' if action_name=='my_vendor'%>"><a href="/web/center/my_vendor"><i></i>我的商家</a></li>
+        <li class="first <%='first_active' if action_name=='my_visit'%>"><a href="/web/center/my_visit"><i></i>我的拍档</a></li>
+        <li class="first <%='first_active' if action_name=='my_search'%>"><a href="/web/center/my_search"><i></i>我的拍拍</a></li>
+    </ul>
+</div>

@@ -1,43 +1,49 @@
-<%= link_to "切换", detail_customers_path %>
 <!-- content srart -->
-<h3>附近的店：</h3>
-<div class="am-g am-g-fixed vendor-fixed">
 
-    <div class="am-u-md-8 am-u-sm-12">
-      <% @vendors.each do |vendor| %>
-        <article class="am-g blog-entry-article">
-            <h1>
-              <a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>&gps_id=<%=@gps.id%>"><%= vendor.title %></a>
-            </h1>
+<div class="am-g am-g-fixed blog-fixed blog-content">
+ 
+        <%= link_to "切换", detail_customers_path, class:"vendor-continue",target:"_blank" %>
+        <div class="blog-sidebar-widget blog-bor" id="blog_visit_list" >
+          <h3 class="blog-comment">附近商家</h3>
+          <% @vendors.each do |vendor| %>
+              <article class="am-g blog-entry-article">
+                <h1>
+                  <a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>&gps_id=<%=@gps.id%>"><%= vendor.title %></a>
+                </h1>
 
-            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
-                <a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>&gps_id=<%=@gps.id%>"><%= image_tag vendor.cover_img_path ,:class=>"am-u-sm-12",:width=>"600px",:higth=>"400px" %></a>
-            </div>
-            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
-                <span>访问热度：<a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>&gps_id=<%=@gps.id%>" class="vendor-color"><%= vendor.view_count %></a></span>
-                <span>入驻时间：<%= show_db_time(vendor.created_at) %></span>
-            </div>
-        </article>
-      <% end %>
-      <p></p>
-      <p><a href="/vendors" class="vendor-continue">>>more</a></p>
-    </div>
-    
+                <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+                    <a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>&gps_id=<%=@gps.id%>"><%= image_tag vendor.cover_img_path ,:class=>"am-u-sm-12" %></a>
+                </div>
+                <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
+                    <span>访问热度：<a href="/vendors/<%= vendor.id %>?customer_id=<%=@customer.id%>&gps_id=<%=@gps.id%>" class="vendor-color"><%= vendor.view_count %></a></span><br/>
+                    <span>入驻时间：<%= show_db_time(vendor.created_at) %></span>
+                    <span>商家描述：<%= vendor.content.html_safe %></span>
+                </div>
+              </article>  
+          <% end %>
+
+          <div class="blog-sidebar-widget blog-bor" id="blog_comments_list" >
+             <p><a href="/vendors" >>>more</a></p>
+          </div>
+        </div>
+
+         <br/><br/>
+      
+        <div class="blog-sidebar-widget blog-bor" id="blog_comments_list" >
+            <h3 class="blog-comment">到访用户</h3>
+            <% @customers.each do |cs| %>
+              <article class="am-g blog-entry-article">
+                <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
+                    <span><a href="/customers/<%= cs.id %>?from_id=<%=@customer.id%>&to_id=<%=cs.id%>" class="vendor-color"><%= cs.name %></a></span>
+                </div>
+              </article>  
+            <% end %>
+        </div>
+
+ 
 </div>
 <!-- content end -->
 
-<!-- content srart -->
-<h3>附近的人</h3>
-<h4>相约一起更实惠哦！！</h4>
-<div class="am-g am-g-fixed vendor-fixed">
-    <div class="am-u-md-8 am-u-sm-12">
-      <% @customers.each do |cs| %>
-        <article class="am-g blog-entry-article">
-            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 vendor-entry-text">
-                <span><a href="/customers/<%= cs.id %>?from_id=<%=@customer.id%>&to_id=<%=cs.id%>" class="vendor-color"><%= cs.name %></a></span>
-            </div>
-        </article>
-      <% end %>
-    </div>
-</div>
-<!-- content end -->
+
+
+   

@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'remotipart', '~> 1.2'
 gem 'cocoon'
 gem 'simple_form'
-gem 'default_where', github: 'qinmingyuan/default_where'
+gem 'default_where', github: 'jamst/default_where'
 
 gem 'spreadsheet'
 gem 'roo'

@@ -30,6 +30,21 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :vendors do
+      collection do
+        post :upload_image
+      end
+    end
+
+    resources :markets do
+      collection do
+        post :upload_image
+      end
+    end
+
+  end
+
+  resources :attachments do
   end
 
   namespace :web do

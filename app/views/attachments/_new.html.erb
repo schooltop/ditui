@@ -1,0 +1,38 @@
+<i class="close icon"></i>
+<h2 class="ui dividing header"><%= params[:entity] %> <%= @tag %> Attachemnt</h2>
+<div class=" ui content">
+  <div class="ui three cards">
+    <%@entity.attachments.where(tag:@tag).each do |att| %>
+      <div class='ui card uploaded_attachment'>
+        <div class="ui content" id="attachment_<%= att.id %>">
+          <div class="item">
+            <%= link_to att.path.url, target: '_blank',class: 'ui image label' do%> 
+              <i class="file icon blue"></i><%= att.name%>
+            <%end%>
+          </div>
+        </div>
+        <div class="extra content">
+          <%= link_to 'Delete', attachment_path(att,entity: @entity.class.name, entity_id: @entity.id, tag: @tag), remote: true, method: :delete, class: 'ui button mini' %>
+        </div>
+      </div>
+    <%end%>
+
+    <div class='ui card new_attachment'>
+      <div class="content">
+        <%= form_for @entity.attachments.new, url: attachments_path(entity: @entity.class.name, entity_id: @entity.id, tag: @tag), remote: true, method: :post do |f| %>
+          <div class=" two fields">
+            <%= f.file_field :path, label: 'please select #{@tag} Attachemnt' %>
+            <%= f.hidden_field :tag,:value=>@tag %>
+          </div>
+          <div class="actions ">
+            <%= f.submit 'Upload', class: 'ui button primary mini' %>
+          </div>
+        <% end %>
+      </div>
+    
+    </div>
+  </div>  
+</div>
+<div class="actions ">
+  <div class="ui cancel button">Cancel</div>
+</div>

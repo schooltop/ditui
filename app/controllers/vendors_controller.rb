@@ -113,7 +113,7 @@ class VendorsController < ApplicationController
   end
 
   def upload_image
-    attachment = Attachment.create(attachment_entity_type: "vendor", path: params[:wang_editor_file], created_by: 1 )
+    attachment = Attachment.create(attachment_entity_type: "Vendor", path: params[:wang_editor_file], created_by: 1 )
     render plain: attachment.path
   end
 

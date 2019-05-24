@@ -1,0 +1,22 @@
+$('#new_attachment_modal_<%= @entity.id %>').modal('setting', {autofocus: false}).modal('hide');
+$('#new_attachment_modal_<%= @entity.id %>').remove();
+$('body').append('<div class="ui modal" id="new_attachment_modal_<%= @entity.id %>"><%= j(render 'new') %></div>');
+$('#new_attachment_modal_<%= @entity.id %>').modal('setting', {autofocus: false}).modal('show');
+
+$('.dropdown').dropdown();
+$(".button").popup();
+$(".icon").popup();
+$(".popups").popup();
+$('.button.dropdown').dropdown({on: 'hover', action: function(text, value) {}});
+$("#new_attachment").form({
+  inline : true,
+  fields: {
+    path: {
+      identifier: 'attachment[path]',
+      rules: [{
+        type: 'empty',
+        prompt: 'please select <%=@tag%> Attachemnt'
+      }]
+    }
+  }
+});

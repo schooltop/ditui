@@ -1,0 +1,16 @@
+<% if @vendor.errors.blank? %>
+  $("#vendor_<%= @vendor.id %>").replaceWith("<%= j(render partial: 'list', locals: { vendor: @vendor} ) %>");
+  $("#vendor_modal").modal('hide');
+<% else %>
+  $(".field .red.pointing").remove();
+  <% @vendor.errors.messages.each do |key, value| %>
+    $("#vendor_<%= key %>").parent().addClass('error');
+    $("#vendor_<%= key %>").parent().append("<div class='ui basic red pointing prompt label transition visible'><%= value[0] %></div>");
+  <% end %>
+<% end %>
+
+$(".button").popup();
+$(".icon").popup();
+$(document).find('.dropdown').dropdown({
+    on: 'hover'
+});

@@ -2,7 +2,7 @@
   <ul>
     <li>
       <a class="item">
-        <i class="bar chart icon"></i>
+        <i class="users icon"></i>
         <span class="main_menu">用户管理</span>
         <i class="right dropdown icon"></i>
       </a>
@@ -14,6 +14,19 @@
         <%= link_to admin_users_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>
           <span>用户管理</span>
+        <% end %>
+      </div>
+    </li>
+    <li>
+      <a class="item">
+        <i class="share alternate square icon"></i>
+        <span class="main_menu">供应商管理</span>
+        <i class="right dropdown icon"></i>
+      </a>
+      <div class="menu content child active">
+        <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>供应商管理</span>
         <% end %>
         <%= link_to new_customer_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>

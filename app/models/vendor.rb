@@ -1,6 +1,8 @@
 class Vendor < ApplicationRecord
   has_many :comments
   has_many :customers_vendors
+  belongs_to :market
+  has_many :attachments, as: :attachment_entity
   has_and_belongs_to_many :customers, join_table: :customers_vendors
  
   def cover_img_path

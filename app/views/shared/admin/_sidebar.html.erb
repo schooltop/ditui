@@ -24,9 +24,25 @@
         <i class="right dropdown icon"></i>
       </a>
       <div class="menu content child active">
+        <%= link_to admin_markets_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>卖场管理</span>
+        <% end %>
         <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>
           <span>供应商管理</span>
+        <% end %>
+        <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>供应商商品管理</span>
+        <% end %>
+        <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>供应商活动管理</span>
+        <% end %>
+        <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>供应商优惠券管理</span>
         <% end %>
         <%= link_to new_customer_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>

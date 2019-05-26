@@ -3,6 +3,10 @@
     <div id="form_message" class="two fields red" style="margin-left: 15px;display:none;" ></div>
 
     <div class="two fields">
+      <%= file_field_tag "draft_img", id: 'draft_img' %>
+    </div>
+
+    <div class="two fields">
       <%= f.input :name %>
       <%= f.input :view_count %>
     </div>

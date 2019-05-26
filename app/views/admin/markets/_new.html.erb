@@ -1,4 +1,4 @@
-<%= simple_form_for @vendor, url: admin_vendors_path , method: :post, remote: true do |f| %>
+<%= simple_form_for @market, url: admin_markets_path , method: :post, remote: true do |f| %>
   
     <div id="form_message" class="two fields red" style="margin-left: 15px;display:none;" ></div>
 
@@ -8,7 +8,7 @@
 
     <div class="two fields">
       <%= f.input :name %>
-      <%= f.input :view_count %>
+      <%= f.input :address %>
     </div>
     
     <div class="field">

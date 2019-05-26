@@ -58,7 +58,7 @@ class VendorsController < ApplicationController
     respond_to do |format|
       if @vendor.save
         unless params[:draft_img].blank?
-          attachment = Attachment.create(attachment_entity_type: "vendor",attachment_entity_id: @vendor.id , path: params[:draft_img], created_by: 1 ) 
+          attachment = Attachment.create(attachment_entity_type: "Vendor",attachment_entity_id: @vendor.id , path: params[:draft_img], created_by: 1 ) 
           @vendor.cover_img = attachment.id
           path = "#{Rails.root}/public#{attachment.path.to_s}"
           exif = EXIFR::JPEG.new(path)
@@ -83,7 +83,7 @@ class VendorsController < ApplicationController
     respond_to do |format|
       if @vendor.update(vendor_params)
         unless params[:draft_img].blank?
-          attachment = Attachment.create(attachment_entity_type: "vendor",attachment_entity_id: @vendor.id , path: params[:draft_img], created_by: 1 ) 
+          attachment = Attachment.create(attachment_entity_type: "Vendor",attachment_entity_id: @vendor.id , path: params[:draft_img], created_by: 1 ) 
           @vendor.cover_img = attachment.id
           path = "#{Rails.root}/public#{attachment.path.to_s}"
           exif = EXIFR::JPEG.new(path)

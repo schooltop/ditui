@@ -1,4 +1,4 @@
-<%= simple_form_for @vendor, url: admin_vendors_path , method: :post, remote: true do |f| %>
+<%= simple_form_for @market, url: admin_market_path(@market) , method: :put, remote: true, html: {id:"edit_point_market"} do |f| %>
   
     <div id="form_message" class="two fields red" style="margin-left: 15px;display:none;" ></div>
 
@@ -8,14 +8,17 @@
 
     <div class="two fields">
       <%= f.input :name %>
-      <%= f.input :view_count %>
+      <%= f.input :address %>
     </div>
-    
+
     <div class="field">
       <div class="actions ">
         <div class="ui button primary" id="commition" >提交</div>
         <div class="ui cancel button">取消</div>
       </div>
     </div>
-
 <% end %>
+
+
+
+

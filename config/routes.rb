@@ -33,10 +33,18 @@ Rails.application.routes.draw do
     resources :vendors do
       collection do
         post :upload_image
+        get :add_comments
+        post :create_comments
       end
     end
 
     resources :markets do
+      collection do
+        post :upload_image
+      end
+    end
+
+    resources :stores do
       collection do
         post :upload_image
       end

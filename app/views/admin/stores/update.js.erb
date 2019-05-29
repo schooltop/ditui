@@ -1,0 +1,16 @@
+<% if @store.errors.blank? %>
+  $("#store_<%= @store.id %>").replaceWith("<%= j(render partial: 'list', locals: { store: @store} ) %>");
+  $("#store_modal").modal('hide');
+<% else %>
+  $(".field .red.pointing").remove();
+  <% @store.errors.messages.each do |key, value| %>
+    $("#store_<%= key %>").parent().addClass('error');
+    $("#store_<%= key %>").parent().append("<div class='ui basic red pointing prompt label transition visible'><%= value[0] %></div>");
+  <% end %>
+<% end %>
+
+$(".button").popup();
+$(".icon").popup();
+$(document).find('.dropdown').dropdown({
+    on: 'hover'
+});

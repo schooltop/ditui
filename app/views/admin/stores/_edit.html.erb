@@ -1,4 +1,4 @@
-<%= simple_form_for @market, url: admin_market_path(@market) , method: :put, remote: true, html: {id:"edit_point_market"} do |f| %>
+<%= simple_form_for @store, url: admin_store_path(@store) , method: :put, remote: true, html: {id:"edit_point_store"} do |f| %>
   
     <div id="form_message" class="two fields red" style="margin-left: 15px;display:none;" ></div>
 
@@ -9,10 +9,6 @@
     <div class="two fields">
       <%= f.input :name %>
       <%= f.input :address %>
-    </div>
-
-    <div class="two fields">
-      <%= f.input :content %>
     </div>
 
     <div class="field">

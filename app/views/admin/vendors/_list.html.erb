@@ -17,6 +17,10 @@
     <%= link_to edit_admin_vendor_path(vendor.id) , remote: true, class: 'ui icon primary button', 'data-content' => '修改vendor', 'data-variation' => 'inverted'  do%>
       <i class="edit icon"></i>
     <% end %>
+    <%= link_to add_comments_admin_vendors_path(id:vendor.id) , remote: true, class: 'ui icon primary button', 'data-content' => '添加评论', 'data-variation' => 'inverted'  do%>
+      <i class="share icon"></i>
+    <% end %>
+    <br/><br/>
     <%= link_to new_attachment_path(entity: "Vendor", entity_id: vendor.id, tag: "picture"), remote: true do %>
       <i class="file icon color_9c9c9d" data-content='picture' data-variation='inverted wide'></i>Vendor‘s picture
     <% end %>

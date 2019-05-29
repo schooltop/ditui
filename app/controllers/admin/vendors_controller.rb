@@ -1,5 +1,7 @@
 class Admin::VendorsController < Admin::BaseController
 
+    before_action :set_vendor, only: [:show, :edit, :update,:add_comments,:create_comments]
+
 	  def index
    	 @q = SearchParams.new(params[:search_params] || {})
    	 @vendors = Vendor.default_where(@q.attributes(self)).page(params[:page]).per(10)
@@ -11,13 +13,11 @@ class Admin::VendorsController < Admin::BaseController
 
     def edit
      @html_title = "Edit Vendor"
-     @vendor =  Vendor.find(params[:id])
      render :layout => false
     end
 
     def show
       @html_title =  "Show Vendor"
-      @vendor =  Vendor.find(params[:id])
       render :layout => false
     end
 
@@ -38,7 +38,6 @@ class Admin::VendorsController < Admin::BaseController
     end
 
     def update
-      @vendor = Vendor.find(params[:id])
       @vendor.update(vendor_params)
 
       unless params[:draft_img].blank?
@@ -59,6 +58,12 @@ class Admin::VendorsController < Admin::BaseController
       render plain: attachment.path
     end
 
+    def add_comments
+    end
+
+    def create_comments
+      Comment.create(vendor_id:@vendor.id,content:params[:comment_text])
+    end
 
     private
     # Use callbacks to share common setup or constraints between actions.

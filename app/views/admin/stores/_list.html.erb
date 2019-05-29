@@ -1,0 +1,24 @@
+<tr id="store_<%= store.id %>">
+  <td class="center aligned">
+    <span><%= store.id%></span>
+  </td>
+  <td class="center aligned">
+     <a href="/stores/show_gps?id=<%=store.cover_img.to_i%>" target="_blank">
+       <%= image_tag store.cover_img_path ,:class=>"blog-entry-img blog-article-margin",:width=>"60px",:higth=>"40px" %>   
+    </a>
+  </td>
+  <td class="center aligned">
+    <%= store.name %>
+  </td>
+  <td class="center aligned">
+    <%= store.address %>
+  </td>
+  <td class="center aligned">
+    <%= link_to edit_admin_store_path(store.id) , remote: true, class: 'ui icon primary button', 'data-content' => '修改store', 'data-variation' => 'inverted'  do%>
+      <i class="edit icon"></i>
+    <% end %>
+    <%= link_to new_attachment_path(entity: "store", entity_id: store.id, tag: "picture"), remote: true do %>
+      <i class="file icon color_9c9c9d" data-content='picture' data-variation='inverted wide'></i>store‘s picture
+    <% end %>
+  </td>
+</tr>

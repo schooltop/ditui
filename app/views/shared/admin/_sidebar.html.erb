@@ -24,6 +24,10 @@
         <i class="right dropdown icon"></i>
       </a>
       <div class="menu content child active">
+        <%= link_to admin_stores_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>新店管理</span>
+        <% end %>
         <%= link_to admin_markets_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>
           <span>卖场管理</span>

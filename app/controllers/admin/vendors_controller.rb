@@ -17,8 +17,7 @@ class Admin::VendorsController < Admin::BaseController
     end
 
     def show
-      @html_title =  "Show Vendor"
-      render :layout => false
+      @contacts = @vendor.contacts.certified.actived.order(:name)
     end
 
     def create

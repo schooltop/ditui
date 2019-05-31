@@ -1,0 +1,10 @@
+<div class="ui modal edit_contact">
+  <i class="close icon"></i>
+  <div class="ui header blue">Edit Contact</div>
+  <div class="content">
+    <%= form_for @contact, url: admin_contact_path(@contact), remote: true do |f| %>
+      <%= render 'form', f: f, wide: :two %>
+      <%= f.submit 'Submit' %>
+    <% end %>
+  </div>
+</div>

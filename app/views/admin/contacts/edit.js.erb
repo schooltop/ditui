@@ -1,0 +1,24 @@
+$('.modal.edit_contact').remove();
+$('body').append("<%= j render 'edit' %>");
+$('.modal.edit_contact').modal('setting', {autofocus: false}).modal('show');
+$('.ui.dropdown').dropdown({autofocus: false});
+$('#edit_contact_<%= @contact.id %>').form({
+  fields: {
+    name: {
+      identifier : 'contact[name]',
+      rules      : [
+        {
+          type   : 'empty'
+        }
+      ]
+    }
+    email: {
+      identifier : 'contact[email]',
+      rules      : [
+        {
+          type   : 'email'
+        }
+      ]
+    }
+  }
+});

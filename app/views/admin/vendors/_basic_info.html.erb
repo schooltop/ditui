@@ -1,0 +1,37 @@
+<table class="ui table" id="vendor_basic_table_<%= @vendor.id %>">
+  <tbody>
+    <tr>
+      <td class="active collapsing" style="width:10%">vendor Name</td>
+      <td style="width:23%">
+        <%= @vendor.name %>
+      </td>
+      <td class="active collapsing" style="width:10%">view_count</td>
+      <td style="width:23%"><%= @vendor.view_count %></td>
+      <td class="active collapsing" style="width:10%">Establish Date</td>
+      <td style="width:23%"><%= show_db_time @vendor.created_at %></td>
+    </tr>
+    <tr>
+      <td class="active collapsing" style="width:10%">vendor Type</td>
+      <td style="width:23%"><%= @vendor.category&.name %></td>
+      <td class="active collapsing" style="width:10%">store</td>
+      <td style="width:23%"><%= @vendor.store&.name %></td>
+      <td class="active collapsing" style="width:10%">market</td>
+      <td style="width:23%"><%= @vendor.market&.name %></td>
+    </tr>
+        
+    <tr>
+      <td class="active collapsing" style="width:10%">tag</td>
+      <td style="width:13%"><%= @vendor.tag %></td>
+      <td class="active collapsing" style="width:10%">Representative</td>
+      <td colspan="3">
+        BD: <%= Employee.get_by_name(@vendor.bd_id) %> &nbsp;|&nbsp;
+        Dealer: <%= Employee.get_by_name(@vendor.dealer_id) %> &nbsp;|&nbsp;
+        CS: <%= Employee.get_by_name(@vendor.cs_id) %> 
+      </td>
+    </tr>
+    <tr>
+      <td class="active collapsing" style="width:10%">Introduction</td>
+      <td colspan="5"><%= @vendor.content %></td>
+    </tr>
+  </body>
+</table>

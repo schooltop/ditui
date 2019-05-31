@@ -1,0 +1,36 @@
+<div class="<%= wide %> fields">
+<%= f.text_field :first_name %>
+<%= f.text_field :last_name %>
+</div>
+<div class="<%= wide %> fields">
+<%= f.select :gender, options_for_select(Contact.options_i18n(:gender), @contact&.gender), include_blank: false %>
+<%= f.text_field :email %>
+</div>
+<div class="<%= wide %> fields">
+<%= f.text_field :mobile %>
+<%= f.text_field :tel %>
+</div>
+<div class="<%= wide %> fields">
+<%= f.select :title, options_for_select(Contact.options_i18n(:title), @contact&.title), include_blank: false %>
+<div class="field">
+	<label class="" for="company_contact_title">Nation</label>
+	<div class="ui fluid search selection dropdown">
+	  <%if controller_name == "companies" %>	
+	    <input type="hidden" name="company[contact][country]" id="company_contact_country" %>
+	  <% else %>
+	    <input type="hidden" name="contact[country]" id="contact_country" %>
+	  <% end %>
+	  <i class="dropdown icon"></i>
+	  <div class="text active"><%= @contact&.country %></div>
+	  <div class="menu" >
+	    <% set_countries.each do |country| %>
+	      <div class="item" data-value="<%= country[0] %>" ><%= country[1] %></div>
+	    <% end %>
+	  </div>
+	</div>
+</div>
+</div>
+<div class="<%= wide %> fields">
+<%= f.check_box :buyer, value: true %>
+<%= f.check_box :vendor, value: true %>
+</div>

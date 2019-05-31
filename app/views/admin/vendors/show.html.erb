@@ -1,0 +1,17 @@
+<% content_for :company_detail do %>
+  <table class="ui celled table">
+    <thead>
+    <tr>
+      <th class="center aligned">Contact Name</th>
+      <th class="center aligned">Position</th>
+      <th class="center aligned">Email</th>
+      <th class="center aligned">Mob | Tel</th>
+      <th class="center aligned">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'admin/contacts/list', collection: @contacts, as: :contact %>
+    </tbody>
+  </table>
+<% end %>
+<%= render 'show' %>

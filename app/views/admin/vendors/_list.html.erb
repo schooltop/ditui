@@ -8,7 +8,7 @@
     </a>
   </td>
   <td class="center aligned">
-    <%= vendor.name %>
+    <%= link_to vendor.name, admin_contacts_path(vendor_id: vendor.id) %>
   </td>
   <td class="center aligned">
     <%= vendor.view_count %>
@@ -18,6 +18,9 @@
       <i class="edit icon"></i>
     <% end %>
     <%= link_to add_comments_admin_vendors_path(id:vendor.id) , remote: true, class: 'ui icon primary button', 'data-content' => '添加评论', 'data-variation' => 'inverted'  do%>
+      <i class="share icon"></i>
+    <% end %>
+    <%= link_to add_comments_admin_vendors_path(id:vendor.id) , remote: true, class: 'ui icon primary button', 'data-content' => '上传供应商产品', 'data-variation' => 'inverted'  do%>
       <i class="share icon"></i>
     <% end %>
     <br/><br/>

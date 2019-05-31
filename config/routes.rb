@@ -38,6 +38,12 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :contacts, except: :show do
+      member do
+        post :add_account
+      end
+    end
+
     resources :markets do
       collection do
         post :upload_image

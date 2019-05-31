@@ -1,4 +1,8 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.com'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+  "https://github.com/#{repo_name}.git"
+end
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -26,6 +30,8 @@ gem 'remotipart', '~> 1.2'
 gem 'cocoon'
 gem 'simple_form'
 gem 'default_where', github: 'jamst/default_where'
+gem 'rails_com'
+
 
 gem 'spreadsheet'
 gem 'roo'

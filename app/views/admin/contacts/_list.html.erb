@@ -1,0 +1,27 @@
+<tr id="<%= model_str contact %>">
+  <td class="left aligned">
+    <%= contact.appellation_full_name %>
+    <% if contact.user_id.to_i > 0 %>
+      <label class="ui green compacted basic label">Regsiter</label>
+    <% end %>
+  </td>
+  <td class="center aligned"><%= contact.title %></td>
+  <td class="center aligned"><%= contact.email %></td>
+  <td class="left aligned">
+    <% if contact.mobile.present? %>
+      M: <%= contact.mobile %><br>
+    <% end %>
+    <% if contact.tel.present? %>
+     T: <%= contact.tel %>
+    <% end %>
+  </td>
+  <td class="center aligned">
+    <% if contact.user_id.to_i > 0 %>
+      <label style="color: orange">Please edit in account tab page</label>
+    <% else %>
+      <%= link_to 'Edit', edit_admin_contact_path(contact), class: 'ui blue mini button', remote: true %>
+      <%= link_to 'Remove', admin_contact_path(contact), class: 'ui red mini button', remote: true, method: :delete, data: {confirm: 'Do you confirm to delete this contact?'} %>
+      <%= link_to 'Add Account', add_account_admin_contact_path(contact), class: 'ui yellow mini button', method: :post, data: {confirm: 'Do you confirm to add this contact to account？'} %>
+    <% end %>
+  </td>
+</tr>

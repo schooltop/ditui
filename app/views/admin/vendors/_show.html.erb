@@ -1,0 +1,33 @@
+<div class="ui grid">
+  <div class="left floated fourteen wide column">
+    <h2><a href="javascript:history.back()"><i class="blue reply icon"></i></a> <a style="font-weight:bold; color:black; font-size:17px;">Company Detail</a> </h2> 
+  </div>
+</div>
+<div class="ui blue segment">
+  <!-- 基本信息 -->
+  <h3 class="ui dividing header">
+    Basic Information
+    <%= link_to edit_admin_vendor_path(@vendor), remote: true do %>
+      <i class="edit icon"></i>
+    <% end %>
+  </h3>
+  <%= render 'admin/vendors/basic_info' %>
+  <div class="ui attached tabular menu archives">
+
+    <%= link_to '联系人', admin_contacts_path(vendor_id: @vendor.id), class: active_helper(paths: [admin_contacts_path(vendor_id: @vendor.id)]) %>
+    
+    <%#= link_to '产品', admin_products_path(vendor_id: @vendor.id), class: active_helper(paths: [admin_products_path(vendor_id: @vendor.id)]) %>
+
+    <%#= link_to '活动', admin_products_path(vendor_id: @vendor.id), class: active_helper(paths: [admin_products_path(vendor_id: @vendor.id)]) %>
+
+    <%#= link_to '附件（合同／营业执照／店面）', operation_log_admin_companies_path(id: @vendor.id), class: active_helper(paths: [operation_log_admin_companies_path('companies')]) %>
+
+    <%#= link_to '地图', operation_log_admin_companies_path(id: @vendor.id), class: active_helper(paths: [operation_log_admin_companies_path('companies')]) %>
+
+    <%#= link_to '跟踪', admin_tracks_path(vendor_id: @vendor.id), class: active_helper(paths: [admin_tracks_path('tracks')]) %>
+
+  </div>
+  <div class="ui bottom attached segment">
+    <%= yield :company_detail %>
+  </div>
+</div>

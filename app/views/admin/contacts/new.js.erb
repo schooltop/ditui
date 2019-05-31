@@ -1,0 +1,32 @@
+$('.modal.new_contact').remove();
+$('body').append("<%= j render 'new' %>");
+$('.modal.new_contact').modal('setting', {autofocus: false}).modal('show');
+$('.ui.dropdown').dropdown({autofocus: false});
+$('#new_contact').form({
+  fields: {
+    first_name: {
+      identifier : 'contact[first_name]',
+      rules      : [
+        {
+          type   : 'empty'
+        }
+      ]
+    },
+    last_name: {
+      identifier : 'contact[last_name]',
+      rules      : [
+        {
+          type   : 'empty'
+        }
+      ]
+    },
+    email: {
+      identifier : 'contact[email]',
+      rules      : [
+        {
+          type   : 'email'
+        }
+      ]
+    }
+  }
+});

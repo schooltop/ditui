@@ -1,0 +1,18 @@
+<% content_for :company_detail do %>
+  <%= link_to 'New', new_admin_contact_path(vendor_id: @vendor.id), remote: true, class: 'ui mini blue button' %>
+  <table class="ui celled table">
+    <thead>
+    <tr>
+      <th class="center aligned">Contact Name</th>
+      <th class="center aligned">Position</th>
+      <th class="center aligned">Email</th>
+      <th class="center aligned">Mob | Tel</th>
+      <th class="center aligned">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'list', collection: @contacts, as: :contact %>
+    </tbody>
+  </table>
+<% end %>
+<%= render 'admin/vendors/show' %>

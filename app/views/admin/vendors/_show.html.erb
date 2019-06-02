@@ -1,6 +1,6 @@
 <div class="ui grid">
   <div class="left floated fourteen wide column">
-    <h2><a href="javascript:history.back()"><i class="blue reply icon"></i></a> <a style="font-weight:bold; color:black; font-size:17px;">Company Detail</a> </h2> 
+    <h2><a href="javascript:history.back()"><i class="blue reply icon"></i></a> <a style="font-weight:bold; color:black; font-size:17px;">供应商详情</a> </h2> 
   </div>
 </div>
 <div class="ui blue segment">
@@ -16,7 +16,7 @@
 
     <%= link_to '联系人', admin_contacts_path(vendor_id: @vendor.id), class: active_helper(paths: [admin_contacts_path(vendor_id: @vendor.id)]) %>
     
-    <%#= link_to '产品', admin_products_path(vendor_id: @vendor.id), class: active_helper(paths: [admin_products_path(vendor_id: @vendor.id)]) %>
+    <%= link_to '产品', admin_vendor_products_path(vendor_id: @vendor.id), class: active_helper(paths: [admin_vendor_products_path(vendor_id: @vendor.id), verifying_admin_vendor_products_path(vendor_id: @vendor.id) ]) %>
 
     <%#= link_to '活动', admin_products_path(vendor_id: @vendor.id), class: active_helper(paths: [admin_products_path(vendor_id: @vendor.id)]) %>
 

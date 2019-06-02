@@ -1,0 +1,30 @@
+<tr id="<%= model_str vendor_product %>">
+  <td class="center aligned"><%= vendor_product.id %></td>
+  <td class="center aligned"><%= vendor_product.vendor&.name %></td>
+  <td class="center aligned"><%= vendor_product.name %></td>
+  <td class="center aligned"><%= show_db_time vendor_product.created_at %></td>
+  <td class="center aligned">
+    <% if vendor_product.locked? %>
+      <label style="color:red">Locked</label>
+    <% else %>
+      <% if vendor_product.instock? %>
+        <label style="color:green">Available</label>
+      <% else %>
+        <label style="color:red">Discontinued</label>
+      <% end %>
+    <% end %>
+  </td>
+  <td class="center aligned">
+    <% if vendor_product.locked? %>
+      <%= link_to 'Unlock', unlocked_admin_vendor_product_path(vendor_product), method: :put, remote: true, class: 'ui teal mini button', data: {confirm: 'Do you confirm to unlock this product？'} %>
+    <% else %>
+      <% if vendor_product.instock? %>
+        <%= link_to 'Disable', out_of_stock_admin_vendor_product_path(vendor_product), method: :put, remote: true, class: 'ui red mini button', data: {confirm: 'Do you confirm to disable this product？'} %>
+      <% else %>
+        <%= link_to 'Enable', instock_admin_vendor_product_path(vendor_product), method: :put, remote: true, class: 'ui green mini button', data: {confirm: 'Do you confirm to enable this product？'} %>
+      <% end %>
+      <%= link_to 'SKU list', sku_admin_vendor_product_path(vendor_product), class: 'ui blue mini button' %>
+      <%= link_to 'Lock', locked_admin_vendor_product_path(vendor_product), method: :put, remote: true, class: 'ui grey mini button', data: {confirm: 'Do you confirm to lock this product？'} %>
+    <% end %>
+  </td>
+</tr>

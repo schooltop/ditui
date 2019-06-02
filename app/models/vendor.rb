@@ -1,6 +1,7 @@
 class Vendor < ApplicationRecord
   has_many :comments
   has_many :customers_vendors
+  has_many :vendor_products
   belongs_to :market
   belongs_to :category
   has_one :store

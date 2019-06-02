@@ -38,6 +38,25 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :vendor_products, only: [:index, :new, :create] do
+      member do
+        put :instock
+        put :out_of_stock
+        get :sku
+        put :instock_sku
+        put :out_of_stock_sku
+        put :locked
+        put :unlocked
+      end
+      collection do
+        post :preview
+        post :download_feedback
+      end
+      collection do
+        get :verifying
+      end
+    end
+
     resources :contacts, except: :show do
       member do
         post :add_account

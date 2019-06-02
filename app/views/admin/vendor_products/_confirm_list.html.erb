@@ -1,0 +1,46 @@
+<div class="confirm list">
+  <i class="checkmark large green icon"></i>Preverification success &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <i class="wait large olive icon"></i>Requires further verification &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <i class="refresh large yellow icon"></i>Product status update &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <i class="remove large red icon"></i>Preverification failed due to selling restriction
+  <button class="ui blue mini button feedback"><i class="download icon"></i>Download Feedback</button>
+  <table class="ui selectable celled table">
+    <thead>
+      <tr>
+        <th class='center aligned'>CAS#</th>
+        <th class='center aligned'>Product Name</th>
+        <th class='center aligned'>Spec</th>
+        <th class='center aligned'>L/T</th>
+        <th class='center aligned'>Note</th>
+        <th class='center aligned'>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @result[:data].each do |ch| %>
+        <tr>
+          <td class='center aligned'><%= ch[:cas] %></td>
+          <td class='center aligned'><%= ch[:name] %></td>
+          <td class='center aligned'><%= ch[:spec_info] %></td>
+          <td class='center aligned'><%= ch[:instock] %></td>
+          <td class='center aligned'><%= ch[:note] %></td>
+          <td class='center aligned'>
+            <% if ch[:result] == 'Preverification success' %>
+              <i class="checkmark large green icon"></i>
+            <% elsif ch[:result] == 'Requires further verification' %>
+              <i class="wait large olive icon"></i>
+            <% elsif ch[:result] == 'Preverification failed due to selling restriction' %>
+              <i class="remove large red icon"></i>
+            <% elsif ch[:result] == 'Product status update' %>
+              <i class="refresh large yellow icon"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%# if @result[:data].length > 10 %>
+    <!-- <p><a class="more" href="javascript:void(0)">加载更多</a><p> -->
+  <%# end %>
+  <button class="ui blue mini button upload product"  onclick="$(this).addClass('loading disabled')" >Upload</button>
+  <button class="ui mini refresh button">Cancel</button>
+</div>

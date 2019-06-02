@@ -1,0 +1,36 @@
+<div class="ui grid">
+  <div class="left floated fourteen wide column">
+    <h2><a href="javascript:history.back()"><i class="blue reply icon"></i></a>SKU List</h2>
+  </div>
+</div>
+<div class="ui blue segment">
+    <%= render 'sku_search_form' %>
+</div>
+<div class="ui blue segment">
+  <table class="ui bottom attached table">
+    <thead>
+    <tr>
+      <th class="center aligned">ID</th>
+      <th class="center aligned">Product Name / CAS# / EBD#</th>
+      <th class="center aligned">Vendor's Cat#</th>
+      <th class="center aligned">Spec</th>
+      <th class="center aligned">Note</th>
+      <th class="center aligned">In Stock</th>
+      <th class="center aligned">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'sku_list', collection: @skus, as: :vendor_product_spec %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="10">
+          <span class="blue">
+            <%= page_entries_info(@skus) %>
+          </span>
+          <%= paginate(@skus, class: 'ui pagination menu right floated') %>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

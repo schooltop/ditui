@@ -1,0 +1,7 @@
+<%= search_form_for @q, url: '', method: 'get', html: {class: 'ui form'} do |f| %>
+  <div class="ui five column grid">
+    <%= f.text_field :product_name,  placeholder: 'Product Name' %>
+    <%= f.text_field :cas,  placeholder: 'CAS or EBD' %>
+    <%= f.submit 'Search' %>
+  </div>
+<% end %>

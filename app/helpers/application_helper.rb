@@ -3,5 +3,10 @@ module ApplicationHelper
     if time.present?
       time.localtime.to_s(:db)
     end
-  end	
+  end
+
+  def model_str(m)
+    "#{m.class.name.underscore}_#{m.id}"
+  end
+
 end

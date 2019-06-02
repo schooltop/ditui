@@ -1,0 +1,23 @@
+<tr id="<%= model_str vendor_product_spec %>">
+  <td class="center aligned"><%= vendor_product_spec.id %></td>
+  <td class="center aligned">
+    <%= vendor_product_spec.chemical.name %><br>
+    <%= chemical_link chemical: vendor_product_spec.chemical %><br>
+    <%= vendor_product_spec.chemical.ebd %>
+  </td>
+  <td class="center aligned"></td>
+  <td class="center aligned"><%= vendor_product_spec.spec_info %></td>
+  <td class="center aligned"><%= vendor_product_spec.note %></td>
+  <td class="center aligned">
+    <% if vendor_product_spec.instock? %>
+      <label style="color:green">Yes</label>
+    <% end %>
+  </td>
+  <td class="center aligned">
+    <% if vendor_product_spec.instock? %>
+      <%= link_to 'Disable', out_of_stock_sku_crm_product_path(vendor_product_spec), method: :put, remote: true, class: 'ui red mini button', data: {confirm: 'Do you confirm to disable this product？'} %>
+    <% else %>
+      <%= link_to 'Enable', instock_sku_crm_product_path(vendor_product_spec), method: :put, remote: true, class: 'ui green mini button', data: {confirm: 'Do you confirm to enable this product？'} %>
+    <% end %>
+  </td>
+</tr>

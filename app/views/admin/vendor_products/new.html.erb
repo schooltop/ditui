@@ -1,0 +1,37 @@
+<div class="ui grid">
+  <div class="left floated fourteen wide column">
+    <h2>上传产品 SKU</h2>
+  </div>
+</div>
+<div class="ui blue segment upload sku">
+  <%= form_for 'vendor_product', url: preview_admin_vendor_products_path, remote: true, html: {autocomplete: :off, class: 'ui form', id: 'upload_product_form'} do |f| %>
+    <%= f.hidden_field :vendor_id %>
+    <div class="four fields">
+      <div class="field">
+        <label>File(<%= link_to 'Download Template', '/excel/Ichemical.in-Upload-Product-Template(back_end).xlsx' %>)</label>
+        <!-- 限制上传xls,xlsx文件 -->
+        <%= f.file_field :path, accept: 'application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', on: {wrapper_all: false}  %>
+      </div>
+    </div>
+    <div class="four fields">
+      <%= f.submit 'Submit' %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $(function(){
+    $('#upload_product_form').form({
+      fields: {
+        path: {
+          identifier : 'vendor_product[path]',
+          rules      : [
+            {
+              type   : 'empty'
+            }
+          ]
+        }
+      }
+    });
+  });
+</script>

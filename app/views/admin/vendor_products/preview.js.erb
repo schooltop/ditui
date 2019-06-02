@@ -1,0 +1,68 @@
+$(".upload.sku.segment").find('div.confirm.list').remove();
+$("div.negative.message").remove();
+
+var loading = "<div class='loading_div' style='position: fixed;top: 0px;left: 0px;width: 100%;height: 100%;background-color: rgb(0, 0, 0);opacity: 0.3; z-index:9999;'>"+
+    "<img src='/assets/loading.gif' width='30px' heigit='30px' alt=''style='position: relative;left: 50%;top: 50%;margin-left: -25px;margin-top: -25px;' />"+
+    "</div>"
+function close_loading_div(){
+    $(".loading_div").hide().remove();
+}
+
+<% if @result[:success] %>
+  var data = JSON.parse("<%= j @result[:data].to_json.html_safe %>");
+  $(".upload.sku.segment").append("<%= j render 'confirm_list' %>");
+
+  // 实现了异步下载文件流
+  $(".feedback.button").click(function(){
+
+    var form = $("<form>");
+        form.attr('style', 'display:none');
+        form.attr('target', '');
+        form.attr('method', 'post');
+        form.attr('action', '<%= download_feedback_admin_vendor_products_path%>');
+
+        var input1 = $('<input>');
+        input1.attr('type', 'hidden');
+        input1.attr('name', 'item');
+        input1.attr('value', "<%= CGI.escape(@result[:data].to_json) %>");
+
+        $('body').append(form);
+        form.append(input1);
+        
+        form.submit();
+        form.remove();
+  });
+
+  $(".upload.product.button").click(function(){
+    if(data.length > 0){
+      $('body').append(loading);
+      $.ajax({
+        url : '<%= admin_vendor_products_path %>?contact_id=<%= @result[:contact_id] %>',
+        type : 'post',
+        data : {data: data},
+        dataType : "json",
+        beforeSend: function(request) {
+          request.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content'));
+        },
+        success: function(result){
+          if(result.result){
+            location.href = "<%= admin_vendor_products_path %>?company_id=" + result.company_id;
+            close_loading_div();
+          }else{
+            $("#content").find(".thirteen.wide.column").before("<div class='ui negative message'><p>No data!</p></div>");
+            close_loading_div();
+          }
+        }
+      });
+    }else{
+      $("#content").find(".thirteen.wide.column").before("<div class='ui negative message'><p>No data!</p></div>");
+    }
+  });
+
+  $(".refresh.button").click(function(){
+    window.location.reload();
+  });
+
+<% else %>
+  $("#content").find(".thirteen.wide.column").before("<div class='ui negative message'><p><%= @result[:msg] %></p></div>");
+<% end %>

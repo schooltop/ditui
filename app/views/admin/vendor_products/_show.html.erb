@@ -1,0 +1,11 @@
+<% content_for :company_detail do %>
+  <%= link_to 'Upload Product SKU', new_admin_vendor_product_path(vendor_id: @vendor.id), class: 'ui mini blue button' %>
+  <div class="ui pointing secondary menu">
+    <%= link_to 'Normal Product', admin_vendor_products_path(vendor_id: @vendor.id), class: active_helper(paths: [admin_vendor_products_path(vendor_id: @vendor.id)]) %>
+    <%= link_to 'Hot Product', verifying_admin_vendor_products_path(vendor_id: @vendor.id), class: active_helper(paths: [verifying_admin_vendor_products_path(vendor_id: @vendor.id)]) %>
+  </div>
+  <div class="ui active tab segment">
+    <%= yield :product_detail %>
+  </div>
+<% end %>
+<%= render 'admin/vendors/show' %>

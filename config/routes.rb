@@ -30,6 +30,12 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :areas do
+      collection do
+        get :search
+      end
+    end
+
     resources :vendors do
       collection do
         post :upload_image

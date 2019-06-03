@@ -1,7 +1,40 @@
-$('.modal.new_contact').remove();
-$('body').append("<%= j render 'new' %>");
-$('.modal.new_contact').modal('setting', {autofocus: false}).modal('show');
+$('#new_contact').remove();
+$('body').append('<div class="ui modal" id="new_contact"><i class="close icon"></i><h2 class="ui dividing header">添加供应商联系人</h2><%= j(render 'new') %></div>');
+$('#new_contact').modal('setting', {autofocus: false}).modal('show');
 $('.ui.dropdown').dropdown({autofocus: false});
+
+$('.ui.search.dropdown').dropdown();
+// 城市变化及联
+
+$('.ui.search.contact_country.dropdown').dropdown({
+  onChange: function(value, text, $selectedItem){
+    var search_path = '/admin/areas/search'
+    var search_url = new URL(window.location.origin + search_path)
+    search_url.searchParams.set('country', value)
+    fetch(search_url).then(function(response){
+      return response.json();
+    }).then(function(response){
+      $('#contact_province').dropdown('clear').dropdown('setup menu', response.values);
+      $("#contact_province").html(response.options);
+    })
+  }
+});
+
+$('.ui.search.contact_province.dropdown').dropdown({
+  onChange: function(value, text, $selectedItem){
+    var search_path = '/admin/areas/search'
+    var search_url = new URL(window.location.origin + search_path)
+    search_url.searchParams.set('province', value)
+    fetch(search_url).then(function(response){
+      return response.json();
+    }).then(function(response){
+      $('#contact_city').dropdown('clear').dropdown('setup menu', response.values);
+      $("#contact_city").html(response.options);
+    })
+  }
+});
+
+
 $('#new_contact').form({
   fields: {
     first_name: {

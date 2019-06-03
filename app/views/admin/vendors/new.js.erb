@@ -1,7 +1,40 @@
 $('#vendor_modal').remove();
-$('body').append('<div class="ui modal" id="vendor_modal"><i class="close icon"></i><h2 class="ui dividing header">添加类型</h2><%= j(render 'new') %></div>');
+$('body').append('<div class="ui modal" id="vendor_modal"><i class="close icon"></i><h2 class="ui dividing header">添加供应商</h2><%= j(render 'new') %></div>');
 $('#vendor_modal').modal('setting', {autofocus: false}).modal('show');
-$('select.dropdown').dropdown();
+$('#vendor_category_id').dropdown();
+
+$('.ui.search.dropdown').dropdown();
+// 城市变化及联
+
+$('.ui.search.vendor_country.dropdown').dropdown({
+  onChange: function(value, text, $selectedItem){
+    var search_path = '/admin/areas/search'
+    var search_url = new URL(window.location.origin + search_path)
+    search_url.searchParams.set('country', value)
+    fetch(search_url).then(function(response){
+      return response.json();
+    }).then(function(response){
+      $('#vendor_province').dropdown('clear').dropdown('setup menu', response.values);
+      $("#vendor_province").html(response.options);
+    })
+  }
+});
+
+$('.ui.search.vendor_province.dropdown').dropdown({
+  onChange: function(value, text, $selectedItem){
+    var search_path = '/admin/areas/search'
+    var search_url = new URL(window.location.origin + search_path)
+    search_url.searchParams.set('province', value)
+    fetch(search_url).then(function(response){
+      return response.json();
+    }).then(function(response){
+      $('#vendor_city').dropdown('clear').dropdown('setup menu', response.values);
+      $("#vendor_city").html(response.options);
+    })
+  }
+});
+
+
 
 // TODO表单校验
   $("#commition").click(function(){

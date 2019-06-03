@@ -1,36 +1,43 @@
 <div class="<%= wide %> fields">
-<%= f.text_field :first_name %>
-<%= f.text_field :last_name %>
+<%= label :name, '名称' %>	
+<%= f.text_field :name %>
 </div>
+
 <div class="<%= wide %> fields">
-<%= f.select :gender, options_for_select(Contact.options_i18n(:gender), @contact&.gender), include_blank: false %>
+<%= label :name, '性别' %>
+<%= f.select :gender, options_for_select(Contact.genders, @contact&.gender), include_blank: false %>
+<%= label :name, '邮箱' %>
 <%= f.text_field :email %>
 </div>
+
 <div class="<%= wide %> fields">
+<%= label :name, '手机' %>
 <%= f.text_field :mobile %>
+<%= label :name, '电话' %>
 <%= f.text_field :tel %>
 </div>
-<div class="<%= wide %> fields">
-<%= f.select :title, options_for_select(Contact.options_i18n(:title), @contact&.title), include_blank: false %>
-<div class="field">
-	<label class="" for="company_contact_title">Nation</label>
-	<div class="ui fluid search selection dropdown">
-	  <%if controller_name == "companies" %>	
-	    <input type="hidden" name="company[contact][country]" id="company_contact_country" %>
-	  <% else %>
-	    <input type="hidden" name="contact[country]" id="contact_country" %>
-	  <% end %>
-	  <i class="dropdown icon"></i>
-	  <div class="text active"><%= @contact&.country %></div>
-	  <div class="menu" >
-	    <% set_countries.each do |country| %>
-	      <div class="item" data-value="<%= country[0] %>" ><%= country[1] %></div>
-	    <% end %>
-	  </div>
+
+<div class="two fields">
+	<div class="field">
+	  <%= label :country, 'Country' %>
+	  <%= f.select :country, options_for_select(set_countries, @contact.country), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection contact_country dropdown', :id=>"contact_country" ,:style=>'width: 72%;'} %>
 	</div>
 </div>
+
+<div class="two fields">
+	<div class="field">
+	  <%= label :province, 'Province' %>	
+	  <%= f.select :province, options_for_select([@contact.province], @contact.province), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection contact_province dropdown', :id=>"contact_province" } %>
+	</div>
+	<div class="field">
+	  <%= label :city, 'City' %>  
+	  <%= f.select :city, options_for_select([@contact.city], @contact.city), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection contact_city dropdown', :id=>"contact_city" } %>
+	</div>
 </div>
+
 <div class="<%= wide %> fields">
+<%= label :name, '买家' %>
 <%= f.check_box :buyer, value: true %>
+<%= label :name, '卖家' %>
 <%= f.check_box :vendor, value: true %>
 </div>

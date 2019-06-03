@@ -7,8 +7,37 @@
     </div>
 
     <div class="two fields">
+      <%= f.select :category_id, options_for_select(Category.all.pluck(:name,:id), @vendor&.title), include_blank: false %>
+    </div>
+
+    <div class="two fields">
       <%= f.input :name %>
       <%= f.input :view_count %>
+    </div>
+
+    <div class="two fields">
+      <div class="field">
+        <%= label :country, 'Country' %>
+        <%= f.select :country, options_for_select(set_countries, @vendor.country), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection vendor_country dropdown', :id=>"vendor_country" ,:style=>'width: 72%;'} %>
+      </div>
+      <div class="field">
+        <%= f.input :tag %>
+      </div>
+    </div>
+
+    <div class="two fields">
+      <div class="field">
+        <%= label :province, 'Province' %>  
+        <%= f.select :province, options_for_select([@vendor.province], @vendor.province), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection vendor_province dropdown', :id=>"vendor_province" } %>
+      </div>
+      <div class="field">
+        <%= label :city, 'City' %>  
+        <%= f.select :city, options_for_select([@vendor.city], @vendor.city), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection vendor_city dropdown', :id=>"vendor_city" } %>
+      </div>
+    </div>
+
+    <div class="two fields">
+      <%= f.input :content %>
     </div>
 
     <div class="field">

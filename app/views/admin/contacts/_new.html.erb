@@ -1,10 +1,8 @@
-<div class="ui modal new_contact">
-  <i class="close icon"></i>
-  <div class="ui header blue">New Contact</div>
-  <div class="content">
-    <%= form_for @contact, url: admin_contacts_path(company_id: params[:company_id]) do |f| %>
-      <%= render 'form', f: f, wide: :two %>
-      <%= f.submit 'Submit' %>
-    <% end %>
-  </div>
-</div>
+<%= simple_form_for @contact, url: admin_contacts_path(vendor_id: params[:vendor_id]) , method: :post, remote: true do |f| %>
+  
+    <div id="form_message" class="two fields red" style="margin-left: 15px;display:none;" ></div>
+
+    <%= render 'form', f: f, wide: :two %>
+    <%= f.submit 'Submit' %>
+
+<% end %>

@@ -4,8 +4,15 @@
   </td>
   <td class="center aligned">
      <a href="/vendors/show_gps?id=<%=vendor.cover_img.to_i%>" target="_blank">
-       <%= image_tag vendor.cover_img_path ,:class=>"blog-entry-img blog-article-margin",:width=>"60px",:higth=>"40px" %>   
+       <%= image_tag vendor.cover_img_path ,:class=>"blog-entry-img blog-article-margin",:width=>"60px",:higth=>"40px" %>
     </a>
+  </td>
+  <td class="center aligned">
+   <% if vendor.market %>
+     <%= link_to vendor.market.name, admin_markets_path("search_params['name']": vendor.market&.name) %>
+   <% else %>
+     <%= link_to vendor.store&.name, admin_stores_path("search_params['name']": vendor.store&.name) %>
+   <% end %>
   </td>
   <td class="center aligned">
     <%= link_to vendor.name, admin_contacts_path(vendor_id: vendor.id) %>
@@ -20,8 +27,8 @@
     <%= link_to add_comments_admin_vendors_path(id:vendor.id) , remote: true, class: 'ui icon primary button', 'data-content' => '添加评论', 'data-variation' => 'inverted'  do%>
       <i class="share icon"></i>
     <% end %>
-    <%= link_to add_comments_admin_vendors_path(id:vendor.id) , remote: true, class: 'ui icon primary button', 'data-content' => '上传供应商产品', 'data-variation' => 'inverted'  do%>
-      <i class="share icon"></i>
+    <%= link_to new_admin_vendor_product_path(vendor_id:vendor.id) , target: "_brank", class: 'ui icon primary button', 'data-content' => '上传供应商产品', 'data-variation' => 'inverted'  do%>
+      <i class="add icon"></i>
     <% end %>
     <br/><br/>
     <%= link_to new_attachment_path(entity: "Vendor", entity_id: vendor.id, tag: "picture"), remote: true do %>

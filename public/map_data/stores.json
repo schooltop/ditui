@@ -1,0 +1,19 @@
+[{
+	"pic": "http://store.is.autonavi.com/showpic/6758bc1520cb4f61b67ac6b1413cf26a?operate=merge&w=160&h=150&position=5",
+	"price": "<font color='#999999'>起价:</font><font color='#f53623'>¥</font><font color='#f53623'>109</font>",
+	"name": "汉粤码头餐厅",
+	"rating": "4.5",
+	"address": "江滩公园汉粤码头",
+	"id": "stores_1",
+	"latitude": "30.590022972222222",
+	"longitude": "114.304743"
+}, {
+	"pic": "/uploads/store/path/40/IMG_20190607_185144.jpg?operate=merge&w=160&h=150&position=5",
+	"price": "<font color='#999999'>起价:</font><font color='#f53623'>¥</font><font color='#f53623'>109</font>",
+	"name": "汉粤码头厕所",
+	"rating": "5.0",
+	"address": "江滩公园汉粤码头",
+	"id": "stores_2",
+	"latitude": "30.58913097222222",
+	"longitude": "114.30352497222222"
+}]

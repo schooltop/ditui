@@ -1,5 +1,5 @@
 class VendorsController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show]
+  before_action :authenticate_user!, except: [:index,:show,:show_gps]
   before_action :set_vendor, only: [:show, :edit, :update, :destroy,:add_comments]
   layout "web"
   require 'exifr/jpeg'

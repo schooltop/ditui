@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_user!, except: [:logout,:new,:create,:index]
+  before_action :authenticate_user!, except: [:logout,:new,:create,:index,:detail]
   before_action :set_customer, only: [:index,:show, :edit, :update, :destroy,:add_comments]
   layout "web"
   require 'exifr/jpeg'
@@ -14,7 +14,15 @@ class CustomersController < ApplicationController
  
   # gps明细表
   def detail
-   render :layout=>false
+   if !params[:market_id].present?
+     render :layout=>false 
+   elsif params[:market_id].include?("markets")
+     @market = Market.find(params[:market_id].split("_").last)
+     render :layout=>false 
+   else
+     @vendor = Vendor.find(params[:market_id].split("_").last) 
+     redirect_to "/vendors/#{@vendor.id}"
+   end
   end
 
   # GET /vendors/1

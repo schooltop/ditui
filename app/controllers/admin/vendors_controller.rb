@@ -1,4 +1,5 @@
 class Admin::VendorsController < Admin::BaseController
+  require 'exifr/jpeg'
 
     before_action :set_vendor, only: [:show, :edit, :update,:add_comments,:create_comments]
 

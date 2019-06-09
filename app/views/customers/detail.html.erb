@@ -18,24 +18,29 @@
             </ul>
         </div>
         <ul id="btnList">
+            <% if @market %>
             <li>
-                <input value="美食数据" type="button" data-path="http://a.amap.com/amap-ui/static/data/restaurant.json" />
-            </li><!-- 
+                <input value="<%= @market.name %>" type="button" data-path="/map_data/markets<%=@market.id%>.json" />
+            </li>
+            <% end %>
             <li>
-                <input value="酒店数据" type="button" data-path="http://a.amap.com/amap-ui/static/data/hotel.json" />
-            </li> -->
+                <input value="卖场" type="button" data-path="/map_data/markets.json" />
+            </li>
             <li>
+                <input value="新店" type="button" data-path="/map_data/stores.json" />
+            </li>
+           <li>
                 <input value="选中第一个" type="button" data-enable='markerList.getData().length>0' data-eval='markerList.selectByDataIndex(0)' />
             </li>
             <li>
                 <input value="选中最后一个" type="button" data-enable='markerList.getData().length>0' data-eval='markerList.selectByDataReverseIndex(0)' />
             </li>
-            <li>
+             <li>
                 <input value="清除选中" type="button" data-enable='!!markerList.getSelectedDataId()' data-eval='markerList.clearSelected()' />
             </li>
-            <li>
+            <!-- <li>
                 <input value="清除数据" type="button" data-enable='markerList.getData().length>0' data-eval='markerList.clearData()' />
-            </li>
+            </li>  -->
         </ul>
     </div>
     <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.3&key=1ba10acf117b52ca87ed980012e706cd'></script>
@@ -112,7 +117,7 @@
 
                     //使用模板创建
                     var innerHTML = MarkerList.utils.template('<div class="poi-imgbox">' +
-                        '    <span class="poi-img" style="background-image:url('+ data.pic +')"></span>' +
+                        '    <a href="/customers/detail?market_id='+ data.id +'" target="_blank"><span class="poi-img" style="background-image:url('+ data.pic +')"></span></a>' +
                         '</div>' +
                         '<div class="poi-info-left">' +
                         '    <h3 class="poi-title">' +

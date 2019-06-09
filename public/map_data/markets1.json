@@ -1,0 +1,37 @@
+[{
+	"pic": "http://store.is.autonavi.com/showpic/6758bc1520cb4f61b67ac6b1413cf26a?operate=merge&w=160&h=150&position=5",
+	"price": "<font color='#999999'>起价:</font><font color='#f53623'>¥</font><font color='#f53623'>109</font>",
+	"name": "芝麻街英语",
+	"rating": "4.5",
+	"address": "奥山世纪城2层东南角",
+	"id": "market_1",
+	"latitude": "30.58913097222222",
+	"longitude": "114.30352497222222"
+}, {
+	"pic": "/uploads/store/path/40/IMG_20190607_185144.jpg?operate=merge&w=160&h=150&position=5",
+	"price": "<font color='#999999'>起价:</font><font color='#f53623'>¥</font><font color='#f53623'>109</font>",
+	"name": "孩子王",
+	"rating": "5.0",
+	"address": "奥山世纪城2层中间",
+	"id": "market_2",
+	"latitude": "30.58913097222222",
+	"longitude": "114.30352497222222"
+}, {
+	"pic": "/uploads/store/path/40/IMG_20190607_185144.jpg?operate=merge&w=160&h=150&position=5",
+	"price": "<font color='#999999'>起价:</font><font color='#f53623'>¥</font><font color='#f53623'>109</font>",
+	"name": "海底捞",
+	"rating": "5.0",
+	"address": "奥山世纪城4层中间",
+	"id": "market_3",
+	"latitude": "30.58913097222222",
+	"longitude": "114.30352497222222"
+}, {
+	"pic": "/uploads/store/path/40/IMG_20190607_185144.jpg?operate=merge&w=160&h=150&position=5",
+	"price": "<font color='#999999'>起价:</font><font color='#f53623'>¥</font><font color='#f53623'>109</font>",
+	"name": "肯德基",
+	"rating": "5.0",
+	"address": "奥山世纪城1层中间",
+	"id": "market_4",
+	"latitude": "30.58913097222222",
+	"longitude": "114.30352497222222"
+}]

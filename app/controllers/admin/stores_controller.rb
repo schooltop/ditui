@@ -1,4 +1,5 @@
 class Admin::StoresController < Admin::BaseController
+  require 'exifr/jpeg'
 
 	  def index
    	 @q = SearchParams.new(params[:search_params] || {})

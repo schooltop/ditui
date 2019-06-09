@@ -1,0 +1,28 @@
+[{
+	"pic": "http://store.is.autonavi.com/showpic/6758bc1520cb4f61b67ac6b1413cf26a?operate=merge&w=160&h=150&position=5",
+	"price": "<font color='#999999'>起价:</font><font color='#f53623'>¥</font><font color='#f53623'>109</font>",
+	"name": "奥山世纪城",
+	"rating": "4.5",
+	"address": "和平大道余家头",
+	"id": "markets_1",
+	"latitude": "30.58913097222222",
+	"longitude": "114.30352497222222"
+}, {
+	"pic": "/uploads/store/path/40/IMG_20190607_185144.jpg?operate=merge&w=160&h=150&position=5",
+	"price": "<font color='#999999'>起价:</font><font color='#f53623'>¥</font><font color='#f53623'>109</font>",
+	"name": "众圆广场",
+	"rating": "5.0",
+	"address": "工业4路",
+	"id": "markets_2",
+	"latitude": "30.58913097222222",
+	"longitude": "114.30352497222222"
+}, {
+	"pic": "/uploads/store/path/40/IMG_20190607_185144.jpg?operate=merge&w=160&h=150&position=5",
+	"price": "<font color='#999999'>起价:</font><font color='#f53623'>¥</font><font color='#f53623'>109</font>",
+	"name": "徐东新世界",
+	"rating": "5.0",
+	"address": "徐东大街",
+	"id": "markets_3",
+	"latitude": "30.58913097222222",
+	"longitude": "114.30352497222222"
+}]

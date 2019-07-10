@@ -1,4 +1,5 @@
 class VendorProduct < ApplicationRecord
+  # 客户产品
 
   include Activeable
   belongs_to :vendor

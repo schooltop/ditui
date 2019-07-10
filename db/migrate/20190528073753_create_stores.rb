@@ -19,10 +19,10 @@ class CreateStores < ActiveRecord::Migration[5.1]
       t.integer "category_id", comment: "category"
       t.integer "seq", default: 10, comment: "seq"
       t.integer "db_id", comment: "bd"
-	  t.integer "dealer_id", comment: "撮合"
-	  t.integer "cs_id", comment: "客服"	
-	  t.datetime "created_at"
-	  t.datetime "updated_at"
+      t.integer "dealer_id", comment: "撮合"
+      t.integer "cs_id", comment: "客服"	
+      t.datetime "created_at"
+      t.datetime "updated_at"
     end
   end
 end

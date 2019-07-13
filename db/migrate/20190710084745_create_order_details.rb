@@ -5,6 +5,7 @@ class CreateOrderDetails < ActiveRecord::Migration[5.1]
       t.string "order_detail_no",comment: "采购订单号"
       t.references "order",comment: "订单"
       t.references "vendor",comment: "供货商"
+      t.references "activity_detail"
       t.decimal "amount", precision: 10, scale: 2, comment: "客户金额"
       t.decimal "vendor_amount", precision: 10, scale: 2, comment: "供应商金额"
       t.decimal "revive_amont", precision: 10, scale: 2, comment: "已收金额"

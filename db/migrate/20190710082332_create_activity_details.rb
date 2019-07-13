@@ -4,6 +4,7 @@ class CreateActivityDetails < ActiveRecord::Migration[5.1]
       t.references "activity"
       t.references "vendor",comment: "供货商"
       t.string "name",comment: "商品名称"
+      t.string "good_no",comment: "商品号"
       t.string "cover_img", comment: "封面图片"
       t.string "package_info", comment: "包装规格"
       t.decimal "market_price", precision: 10, scale: 2, comment: "市场价"

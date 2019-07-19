@@ -34,7 +34,7 @@
         <% end %>
         <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>
-          <span>供应商管理</span>
+          <span>供应商CRM管理</span>
         <% end %>
       </div>
     </li>
@@ -45,6 +45,10 @@
         <i class="right dropdown icon"></i>
       </a>
       <div class="menu content child active">
+        <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>供应商爆品管理</span>
+        <% end %>
         <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>
           <span>供应商活动管理</span>
@@ -68,11 +72,11 @@
         <% end %>
         <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>
-          <span>代理活动管理</span>
+          <span>社区代理活动管理</span>
         <% end %>
         <%= link_to admin_vendors_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>
-          <span>代理订单管理</span>
+          <span>社区代理订单管理</span>
         <% end %>
       </div>
     </li>

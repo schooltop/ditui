@@ -81,7 +81,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :markets do
+    resources :communities do
       collection do
         post :upload_image
       end

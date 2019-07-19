@@ -5,6 +5,4 @@ class Community < ApplicationRecord
   belongs_to :cs, class_name: 'Employee', foreign_key: 'cs_id'
   belongs_to :agent, class_name: 'Employee', foreign_key: 'agent_id'
 
-  has_many :activities
-
 end

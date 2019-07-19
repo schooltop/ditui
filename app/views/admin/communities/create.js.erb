@@ -1,0 +1,16 @@
+<% if @community.errors.blank? %>
+  $("tbody").prepend('<%= j render('list', community: @community) %>');
+  $("#community_modal").modal('hide');
+<% else %>
+  $(".field .red.pointing").remove();
+  <% @community.errors.messages.each do |key, value| %>
+    $("#community_<%= key %>").parent().addClass('error');
+    $("#community_<%= key %>").parent().append("<div class='ui basic red pointing prompt label transition visible'><%= value[0] %></div>");
+  <% end %>
+<% end %>
+
+$(".button").popup();
+$(".icon").popup();
+$(document).find('.dropdown').dropdown({
+    on: 'hover'
+});

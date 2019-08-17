@@ -1,6 +1,6 @@
-class CreateStores < ActiveRecord::Migration[5.1]
+class CreateCommunities < ActiveRecord::Migration[5.1]
   def change
-    create_table :stores do |t|
+    create_table :communities do |t|
       t.string "name",comment: "名称"
       t.text "content",comment: "描述"
       t.string "open_time", comment: "营业时间"
@@ -21,8 +21,10 @@ class CreateStores < ActiveRecord::Migration[5.1]
       t.integer "db_id", comment: "bd"
       t.integer "dealer_id", comment: "撮合"
       t.integer "cs_id", comment: "客服"	
+      t.integer "agent_id", comment: "代理商"	
       t.datetime "created_at"
       t.datetime "updated_at"
     end
   end
 end
+	

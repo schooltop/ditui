@@ -1,4 +1,5 @@
 class VendorProductSpec < ApplicationRecord
+  # 客户产品规格
 
   include Activeable
   

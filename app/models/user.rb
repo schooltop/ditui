@@ -17,7 +17,7 @@ class User < ApplicationRecord
     end 
 
     def gps_size
-      self.customers&.map{|cu|cu.gps_locations}.flatten.uniq.size
+      self.customers&.map{|cu|cu.gps_locations}.flatten.uniq.size + 1
     end   
 
     def visit_customers
